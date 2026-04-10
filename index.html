@@ -88,7 +88,7 @@ nav{
 
 /* ── LAYOUT ── */
 .container{max-width:var(--max);margin:0 auto;padding:0 24px}
-section{padding:80px 0}
+section{padding:68px 0}
 
 /* ── HERO ── */
 .hero{
@@ -177,7 +177,7 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .hero-photo{
   width:280px;height:280px;border-radius:50%;
-  object-fit:cover;object-position:center top;
+  object-fit:cover;object-position:center 20%;
   border:4px solid var(--surface);
   box-shadow:var(--shadow-lg);
   position:relative;z-index:1;
@@ -209,27 +209,45 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 
 /* ── EXPERTISE ── */
 .expertise-section{background:var(--surface-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border)}
+.expertise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .exp-card{
-  background:var(--surface);padding:32px 28px;
-  transition:background .2s;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);
+  padding:36px 32px 32px;position:relative;overflow:hidden;
+  transition:transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s,border-color .2s;
 }
-.exp-card:hover{background:var(--accent-soft)}
-.exp-icon{
-  width:40px;height:40px;border-radius:10px;
-  background:var(--surface-3);border:1px solid var(--border);
+.exp-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  border-radius:var(--r-lg) var(--r-lg) 0 0;
+}
+.exp-card.card-blue::before{background:linear-gradient(90deg,#0F62FE,#6EA6FF)}
+.exp-card.card-purple::before{background:linear-gradient(90deg,#7C3AED,#A78BFA)}
+.exp-card.card-green::before{background:linear-gradient(90deg,#059669,#34D399)}
+.exp-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 40px rgba(0,0,0,.09),0 2px 8px rgba(0,0,0,.05);
+  border-color:var(--border-strong);
+}
+.exp-icon-wrap{
+  width:56px;height:56px;border-radius:14px;
   display:flex;align-items:center;justify-content:center;
-  margin-bottom:20px;font-size:18px;
-  transition:all .2s;
+  margin-bottom:24px;
+  transition:transform .25s cubic-bezier(.22,1,.36,1);
 }
-.exp-card:hover .exp-icon{background:var(--accent);border-color:var(--accent)}
-.exp-card-title{font-size:16px;font-weight:600;color:var(--ink);margin-bottom:12px}
-.exp-card-body{font-size:13px;font-weight:300;color:var(--ink-mid);line-height:1.75;margin-bottom:16px}
+.exp-card:hover .exp-icon-wrap{transform:scale(1.08)}
+.exp-icon-wrap.icon-blue{background:linear-gradient(135deg,#EFF4FF 0%,#DBEAFE 100%);border:1px solid #BFCFFE}
+.exp-icon-wrap.icon-purple{background:linear-gradient(135deg,#F5F3FF 0%,#EDE9FE 100%);border:1px solid #C4B5FD}
+.exp-icon-wrap.icon-green{background:linear-gradient(135deg,#ECFDF5 0%,#D1FAE5 100%);border:1px solid #6EE7B7}
+.exp-icon-wrap svg{width:26px;height:26px;flex-shrink:0}
+.exp-card-title{font-size:17px;font-weight:600;color:var(--ink);margin-bottom:10px;letter-spacing:-.01em}
+.exp-card-body{font-size:13px;font-weight:300;color:var(--ink-mid);line-height:1.8;margin-bottom:20px}
 .exp-tags{display:flex;flex-wrap:wrap;gap:6px}
 .exp-tag{
-  font-size:11px;color:var(--ink-muted);background:var(--surface-3);
-  padding:3px 9px;border-radius:4px;border:1px solid var(--border);
+  font-size:11px;font-weight:400;color:var(--ink-muted);
+  background:var(--surface-2);padding:4px 10px;border-radius:20px;border:1px solid var(--border);
+  transition:all .15s;
 }
+.exp-card:hover .exp-tag{background:var(--surface-3);border-color:var(--border-strong)}
+@media(max-width:900px){.expertise-grid{grid-template-columns:1fr;gap:16px}}
 
 /* ── CASE STUDIES ── */
 .case-studies-section{background:var(--surface)}
@@ -323,35 +341,43 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 
 /* ── EXPERIENCE TIMELINE ── */
 .timeline-section{background:var(--surface-2);border-top:1px solid var(--border)}
-.timeline{display:flex;flex-direction:column;gap:0;position:relative}
-.timeline::before{
-  content:'';position:absolute;left:156px;top:0;bottom:0;
-  width:1px;background:var(--border);
+.timeline{display:flex;flex-direction:column;gap:16px}
+.tl-item{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r-lg);overflow:hidden;
+  transition:box-shadow .2s,border-color .2s;
 }
-.tl-item{display:grid;grid-template-columns:156px 1fr;gap:0}
-.tl-item+.tl-item .tl-left,.tl-item+.tl-item .tl-right{border-top:1px solid var(--border)}
-.tl-left{
-  padding:28px 24px 28px 0;position:relative;
+.tl-item:hover{box-shadow:var(--shadow-md);border-color:var(--border-strong)}
+.tl-header{
+  display:flex;align-items:center;gap:16px;
+  padding:20px 24px 16px;
+  border-bottom:1px solid var(--border);
 }
-.tl-left::after{
-  content:'';position:absolute;right:-5px;top:36px;
-  width:9px;height:9px;border-radius:50%;
-  background:var(--surface);border:2px solid var(--accent);
+.tl-logo{
+  width:44px;height:44px;border-radius:10px;
+  border:1px solid var(--border);background:var(--surface);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;overflow:hidden;
 }
-.tl-company{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:3px}
-.tl-period{font-size:11px;color:var(--ink-muted)}
-.tl-right{padding:28px 0 28px 32px}
-.tl-role{font-family:var(--serif);font-size:18px;color:var(--ink);margin-bottom:12px;letter-spacing:-.01em}
-.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:6px}
+.tl-logo svg{width:24px;height:24px}
+.tl-header-info{flex:1;min-width:0}
+.tl-company{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:3px}
+.tl-meta{
+  display:flex;align-items:center;gap:8px;
+  font-size:12px;color:var(--ink-muted);flex-wrap:wrap;
+}
+.tl-meta-sep{width:3px;height:3px;border-radius:50%;background:var(--border-strong);flex-shrink:0}
+.tl-right{padding:20px 24px 24px}
+.tl-role{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:14px;letter-spacing:-.01em}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:7px}
 .tl-bullets li{
   font-size:13px;font-weight:300;color:var(--ink-mid);
   padding-left:16px;position:relative;line-height:1.6;
 }
 .tl-bullets li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:2px}
-.tl-chip{
-  display:inline-block;font-size:11px;color:var(--ink-muted);
-  background:var(--surface);border:1px solid var(--border);
-  padding:2px 8px;border-radius:4px;margin-top:10px;
+@media(max-width:900px){
+  .tl-header{padding:16px 16px 14px}
+  .tl-right{padding:16px 16px 20px}
 }
 
 /* ── CONTACT ── */
@@ -435,16 +461,75 @@ footer p{font-size:12px;color:var(--ink-muted)}
   .nav-menu-btn{display:flex}
   .hero-stats{gap:20px}
 }
+/* ── CREDIBILITY STRIP ── */
+.credibility-strip{
+  font-size:12px;color:var(--ink-faint);margin-top:20px;
+  letter-spacing:.03em;
+}
+.credibility-strip span{color:var(--ink-muted);font-weight:500}
+
+/* ── WHAT I DO STRIP ── */
+.what-i-do{
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:40px 0;
+}
+.wid-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;background:var(--border);
+}
+.wid-card{
+  background:var(--surface);padding:28px 28px;
+  transition:background .2s;
+}
+.wid-card:hover{background:var(--accent-soft)}
+.wid-num{
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent-mid);margin-bottom:10px;
+}
+.wid-title{
+  font-size:15px;font-weight:600;color:var(--ink);margin-bottom:8px;
+}
+.wid-body{font-size:13px;font-weight:300;color:var(--ink-mid);line-height:1.65}
+
+/* ── FLOATING CTA ── */
+.floating-cta{
+  position:fixed;bottom:28px;right:28px;z-index:200;
+  display:flex;align-items:center;gap:8px;
+  background:var(--ink);color:var(--surface);
+  font-family:var(--sans);font-size:13px;font-weight:500;
+  padding:12px 20px;border-radius:40px;
+  text-decoration:none;
+  box-shadow:0 4px 20px rgba(10,15,30,.25),0 1px 4px rgba(10,15,30,.15);
+  transition:all .2s;border:1px solid transparent;
+}
+.floating-cta:hover{background:var(--accent);transform:translateY(-2px);box-shadow:0 8px 28px rgba(15,98,254,.3)}
+.floating-cta-dot{width:7px;height:7px;border-radius:50%;background:#34D399;animation:pulse 2s infinite;flex-shrink:0}
+
+/* ── CASE STUDY BULLET LISTS ── */
+.case-exec-list{
+  list-style:none;display:flex;flex-direction:column;gap:7px;
+  margin:0;padding:0;
+}
+.case-exec-list li{
+  font-size:14px;font-weight:300;color:var(--ink-mid);
+  line-height:1.65;padding-left:16px;position:relative;
+}
+.case-exec-list li::before{
+  content:'→';position:absolute;left:0;
+  color:var(--accent);font-size:11px;top:3px;
+}
+
+@media(max-width:900px){
+  .wid-grid{grid-template-columns:1fr}
+  .floating-cta span.fcta-text{display:none}
+  .floating-cta{padding:13px 16px;border-radius:50%;width:48px;height:48px;justify-content:center}
+  .floating-cta-dot{display:none}
+  .what-i-do{padding:32px 0}
+}
 @media(max-width:600px){
-  .container{padding:0 16px}
-  .hero-btns{flex-direction:column}
-  .btn-primary,.btn-secondary{justify-content:center}
-  .case-impact{grid-template-columns:1fr;gap:12px}
-  .impact-item{display:flex;align-items:center;gap:12px;text-align:left}
-  .impact-num{font-size:1.5rem;min-width:80px}
-  .expertise-grid{gap:1px}
-  .case-card{padding:24px}
-  .contact-cta-box{padding:28px}
+  .wid-card{padding:20px 16px}
 }
 </style>
 </head>
@@ -463,7 +548,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
       <li><a href="#experience">Experience</a></li>
       <li><a href="#philosophy">Philosophy</a></li>
     </ul>
-    <a href="mailto:shabeerccc@gmail.com" class="nav-cta">Let's Talk</a>
+    <a href="/cdn-cgi/l/email-protection#d7a4bfb6b5b2b2a5b4b4b497b0bab6bebbf9b4b8ba" class="nav-cta">Let's Talk</a>
     <button class="nav-menu-btn" onclick="toggleMenu()" aria-label="Menu">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -478,7 +563,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
   <a href="#case-studies" onclick="closeMenu()">Case Studies</a>
   <a href="#experience" onclick="closeMenu()">Experience</a>
   <a href="#philosophy" onclick="closeMenu()">Philosophy</a>
-  <a href="mailto:shabeerccc@gmail.com" onclick="closeMenu()">Contact</a>
+  <a href="/cdn-cgi/l/email-protection#c1b2a9a0a3a4a4b3a2a2a281a6aca0a8adefa2aeac" onclick="closeMenu()">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -495,7 +580,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
           Leader — <em>Mini-CTO</em>
         </h1>
         <p class="hero-sub fade-up fade-up-2">
-          I build and scale AI-driven products end-to-end — from 0→1 ideation to production systems used by thousands of enterprise customers.
+          I lead product and engineering to build customer-driven platforms powered by AI — from 0→1 to systems used by millions of enterprise customers, driving measurable business outcomes.
         </p>
         <div class="hero-meta fade-up fade-up-2">
           <span>14+ years</span>
@@ -534,6 +619,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
             <span class="stat-label">Years Experience</span>
           </div>
         </div>
+        <p class="credibility-strip fade-up fade-up-5">Previously at: <span>Procore</span> · <span>Autodesk</span> · <span>Cognizant</span></p>
       </div>
 
       <!-- PHOTO -->
@@ -553,7 +639,28 @@ footer p{font-size:12px;color:var(--ink-muted)}
   </div>
 </section>
 
-<!-- EXPERTISE -->
+<!-- WHAT I DO -->
+<div class="what-i-do">
+  <div class="container">
+    <div class="wid-grid">
+      <div class="wid-card">
+        <p class="wid-num">01</p>
+        <h3 class="wid-title">Fractional CTO</h3>
+        <p class="wid-body">Architect and scale AI/data platforms for startups and growth companies — from system design to production governance.</p>
+      </div>
+      <div class="wid-card">
+        <p class="wid-num">02</p>
+        <h3 class="wid-title">Principal Product Leader</h3>
+        <p class="wid-body">Own strategy and execution for complex platform products — roadmap, discovery, stakeholder alignment, and delivery.</p>
+      </div>
+      <div class="wid-card">
+        <p class="wid-num">03</p>
+        <h3 class="wid-title">AI Platform Advisor</h3>
+        <p class="wid-body">Guide architecture, evaluation systems, and production readiness — turning AI prototypes into reliable enterprise systems.</p>
+      </div>
+    </div>
+  </div>
+</div>
 <section class="expertise-section" id="expertise">
   <div class="container">
     <div class="sec-header">
@@ -562,8 +669,17 @@ footer p{font-size:12px;color:var(--ink-muted)}
       <p class="sec-sub">Three distinct capability sets that work together — the reason clients bring me in when they need more than a PM or a CTO.</p>
     </div>
     <div class="expertise-grid">
-      <div class="exp-card">
-        <div class="exp-icon">🎯</div>
+
+      <!-- Card 1: Product Leadership — Blue -->
+      <div class="exp-card card-blue">
+        <div class="exp-icon-wrap icon-blue">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="3" width="9" height="9" rx="2" stroke="#0F62FE" stroke-width="1.75"/>
+            <rect x="14" y="3" width="9" height="9" rx="2" stroke="#0F62FE" stroke-width="1.75" stroke-dasharray="2.5 1.5" opacity=".5"/>
+            <rect x="3" y="14" width="9" height="9" rx="2" stroke="#0F62FE" stroke-width="1.75" stroke-dasharray="2.5 1.5" opacity=".5"/>
+            <path d="M14 18.5h9M18.5 14v9" stroke="#0F62FE" stroke-width="1.75" stroke-linecap="round"/>
+          </svg>
+        </div>
         <h3 class="exp-card-title">Product Leadership</h3>
         <p class="exp-card-body">From messy customer problems to shipped products. I define roadmaps, write PRDs, run discovery, and align stakeholders from exec to engineer — without losing the technical thread.</p>
         <div class="exp-tags">
@@ -575,8 +691,16 @@ footer p{font-size:12px;color:var(--ink-muted)}
           <span class="exp-tag">Enterprise SaaS</span>
         </div>
       </div>
-      <div class="exp-card">
-        <div class="exp-icon">⚙️</div>
+
+      <!-- Card 2: Technology Leadership — Purple -->
+      <div class="exp-card card-purple">
+        <div class="exp-icon-wrap icon-purple">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 9l-5 4 5 4" stroke="#7C3AED" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 9l5 4-5 4" stroke="#7C3AED" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15 5l-4 16" stroke="#7C3AED" stroke-width="1.75" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
         <h3 class="exp-card-title">Technology Leadership</h3>
         <p class="exp-card-body">I speak engineering fluently. I define API contracts, review system architecture, enforce NFRs (latency, consistency, scale), and make infrastructure tradeoff decisions that stick in production.</p>
         <div class="exp-tags">
@@ -588,8 +712,19 @@ footer p{font-size:12px;color:var(--ink-muted)}
           <span class="exp-tag">Team Leadership</span>
         </div>
       </div>
-      <div class="exp-card">
-        <div class="exp-icon">🤖</div>
+
+      <!-- Card 3: AI & Data Platforms — Green -->
+      <div class="exp-card card-green">
+        <div class="exp-icon-wrap icon-green">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13" cy="13" r="3.5" stroke="#059669" stroke-width="1.75"/>
+            <circle cx="4.5" cy="8" r="2" stroke="#059669" stroke-width="1.5" opacity=".7"/>
+            <circle cx="21.5" cy="8" r="2" stroke="#059669" stroke-width="1.5" opacity=".7"/>
+            <circle cx="4.5" cy="18" r="2" stroke="#059669" stroke-width="1.5" opacity=".7"/>
+            <circle cx="21.5" cy="18" r="2" stroke="#059669" stroke-width="1.5" opacity=".7"/>
+            <path d="M6.3 9.2L10.5 11.5M15.5 11.5L19.7 9.2M6.3 16.8L10.5 14.5M15.5 14.5L19.7 16.8" stroke="#059669" stroke-width="1.4" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </div>
         <h3 class="exp-card-title">AI &amp; Data Platforms</h3>
         <p class="exp-card-body">I've shipped production AI — not demos. RAG pipelines, agentic orchestration, evaluation frameworks, ML governance. I know what 90% accuracy looks like and the engineering path to get there.</p>
         <div class="exp-tags">
@@ -601,6 +736,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
           <span class="exp-tag">Petabyte Scale</span>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -636,7 +772,13 @@ footer p{font-size:12px;color:var(--ink-muted)}
           </div>
           <div>
             <p class="case-section-label">Strategy &amp; Execution</p>
-            <p class="case-section-text">Designed a supervisor orchestration layer with intent-routing to domain-specific agents using real-time manifest resolution. Built just-in-time grounding workflows with schema-driven action layers. Established Evaluation-as-a-Service with transaction-level metrics (correctness, recall, completeness). Shipped multimodal RAG pipelines supporting text, document, and image intelligence. Defined AI governance: agent registries, versioning, ML exclusions, hybrid-cloud compliance across AWS, GCP, Azure.</p>
+            <ul class="case-exec-list">
+              <li>Designed supervisor orchestration layer with intent-routing to domain-specific agents via real-time manifest resolution.</li>
+              <li>Built just-in-time grounding workflows with schema-driven action layers to eliminate hallucinations.</li>
+              <li>Established Evaluation-as-a-Service with transaction-level metrics: correctness, recall, and completeness.</li>
+              <li>Shipped multimodal RAG pipelines supporting text, document, and image intelligence across all enterprise tiers.</li>
+              <li>Defined AI governance framework: agent registries, versioning, ML exclusions, and hybrid-cloud compliance across AWS, GCP, Azure.</li>
+            </ul>
           </div>
           <div class="case-impact">
             <div class="impact-item">
@@ -689,7 +831,13 @@ footer p{font-size:12px;color:var(--ink-muted)}
           </div>
           <div>
             <p class="case-section-label">Strategy &amp; Execution</p>
-            <p class="case-section-text">Led design of transactional subscription APIs — GET/POST microservices enabling partners to place orders, get pricing, manage products, and create subscription contracts. Defined full API contracts: schema, entities, filtering/sorting, error handling, rate limits (&lt;250ms latency, 10K req/user). Built order-to-subscription sync: .com → SAP (order) → Salesforce (subscription with entitlements, product line items, start/end dates). Contributed to $1B ARR in FY19.</p>
+            <ul class="case-exec-list">
+              <li>Led design of transactional subscription APIs — GET/POST microservices for partner order placement, pricing, and product management.</li>
+              <li>Defined full API contracts: schema, entities, filtering/sorting, error handling, and rate limits (&lt;250ms latency, 10K req/user).</li>
+              <li>Built order-to-subscription sync pipeline: .com → SAP (order creation) → Salesforce (subscription with entitlements and product line items).</li>
+              <li>Delivered AI/ML churn and buying-readiness models that shaped product strategy and contributed to 25% YoY revenue growth.</li>
+              <li>Architected NLP-powered support bot (IBM Watson) resolving ~20K cases/month, saving $1M+ annually.</li>
+            </ul>
           </div>
           <div class="case-impact">
             <div class="impact-item">
@@ -742,7 +890,13 @@ footer p{font-size:12px;color:var(--ink-muted)}
           </div>
           <div>
             <p class="case-section-label">Strategy &amp; Execution</p>
-            <p class="case-section-text">Designed a partitioning strategy: top 50 enterprise customers received dedicated partitions for high-volume datasets; remaining customers shared a single optimized partition. Introduced incremental materialization across all domains. Audited DynamoDB → DocumentDB → MongoDB migration path to achieve &lt;250ms P99 SLO on complex nested aggregations. Committed to full consistency within 10 minutes via incremental batch processing — a tradeoff customers explicitly approved.</p>
+            <ul class="case-exec-list">
+              <li>Designed a partition strategy: top 50 enterprise customers received dedicated high-volume partitions; remaining customers shared an optimized partition.</li>
+              <li>Introduced incremental materialization across all domains — trading bounded staleness for 5-minute data availability.</li>
+              <li>Audited and migrated DynamoDB → DocumentDB → native MongoDB to achieve &lt;250ms P99 SLO on nested aggregations.</li>
+              <li>Committed to full consistency within 10 minutes via incremental batch processing — a tradeoff customers explicitly approved.</li>
+              <li>Built cross-domain reporting models joining Financials, PMQS, and Resource Management into a unified 360° view.</li>
+            </ul>
           </div>
           <div class="case-impact">
             <div class="impact-item">
@@ -785,14 +939,29 @@ footer p{font-size:12px;color:var(--ink-muted)}
       <h2 class="sec-title">Where I've built</h2>
     </div>
     <div class="timeline">
+
+      <!-- Procore -->
       <div class="tl-item">
-        <div class="tl-left">
-          <p class="tl-company">Procore Technologies</p>
-          <p class="tl-period">Feb 2022 – Feb 2026</p>
-          <span class="tl-chip">Plano, TX</span>
+        <div class="tl-header">
+          <div class="tl-logo" style="background:#F97316;">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 6h10a4 4 0 010 8H4V6z" fill="white" opacity=".9"/>
+              <path d="M4 14h6v4H4v-4z" fill="white" opacity=".6"/>
+            </svg>
+          </div>
+          <div class="tl-header-info">
+            <p class="tl-company">Procore Technologies</p>
+            <div class="tl-meta">
+              <span>Feb 2022 – Feb 2026</span>
+              <span class="tl-meta-sep"></span>
+              <span>Plano, TX</span>
+              <span class="tl-meta-sep"></span>
+              <span style="color:var(--accent);font-weight:500;">Construction Tech · Enterprise AI</span>
+            </div>
+          </div>
         </div>
         <div class="tl-right">
-          <h3 class="tl-role">Principal Product & Technology Leader — Data & AI</h3>
+          <p class="tl-role">Principal Product &amp; Technology Leader — Data &amp; AI</p>
           <ul class="tl-bullets">
             <li>Lifted AI response accuracy from ~45% to <strong>90%+</strong> via just-in-time grounding and schema-driven action layers.</li>
             <li>Shipped multimodal RAG platform (text, document, image) adopted by <strong>3,000+ enterprise customers</strong>.</li>
@@ -803,14 +972,29 @@ footer p{font-size:12px;color:var(--ink-muted)}
           </ul>
         </div>
       </div>
+
+      <!-- Autodesk -->
       <div class="tl-item">
-        <div class="tl-left">
-          <p class="tl-company">Autodesk, Inc.</p>
-          <p class="tl-period">Sep 2013 – Feb 2022</p>
-          <span class="tl-chip">San Francisco, CA</span>
+        <div class="tl-header">
+          <div class="tl-logo" style="background:#000;">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3L3 19h4.5l1.5-3h6l1.5 3H21L12 3z" fill="white" opacity=".9"/>
+              <path d="M9.5 13l2.5-5 2.5 5H9.5z" fill="#000"/>
+            </svg>
+          </div>
+          <div class="tl-header-info">
+            <p class="tl-company">Autodesk, Inc.</p>
+            <div class="tl-meta">
+              <span>Sep 2013 – Feb 2022</span>
+              <span class="tl-meta-sep"></span>
+              <span>San Francisco, CA</span>
+              <span class="tl-meta-sep"></span>
+              <span style="color:var(--accent);font-weight:500;">Design Software · Data &amp; ML</span>
+            </div>
+          </div>
         </div>
         <div class="tl-right">
-          <h3 class="tl-role">Technical Product Manager — Data & ML</h3>
+          <p class="tl-role">Technical Product Manager — Data &amp; ML</p>
           <ul class="tl-bullets">
             <li>Subscription APIs contributing to <strong>~$1B ARR</strong> in FY19 — the company's license-to-subscription pivot.</li>
             <li>AI/ML churn and buying-readiness models driving <strong>~25% YoY revenue growth</strong>.</li>
@@ -819,19 +1003,35 @@ footer p{font-size:12px;color:var(--ink-muted)}
           </ul>
         </div>
       </div>
+
+      <!-- Cognizant -->
       <div class="tl-item">
-        <div class="tl-left">
-          <p class="tl-company">Cognizant</p>
-          <p class="tl-period">Mar 2011 – Sep 2013</p>
-          <span class="tl-chip">San Francisco, CA</span>
+        <div class="tl-header">
+          <div class="tl-logo" style="background:#1264A3;">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="7" stroke="white" stroke-width="2" opacity=".9"/>
+              <path d="M15 10a4 4 0 11-3 6.65" stroke="white" stroke-width="1.75" stroke-linecap="round" opacity=".6"/>
+            </svg>
+          </div>
+          <div class="tl-header-info">
+            <p class="tl-company">Cognizant</p>
+            <div class="tl-meta">
+              <span>Mar 2011 – Sep 2013</span>
+              <span class="tl-meta-sep"></span>
+              <span>San Francisco, CA</span>
+              <span class="tl-meta-sep"></span>
+              <span style="color:var(--accent);font-weight:500;">Enterprise CRM</span>
+            </div>
+          </div>
         </div>
         <div class="tl-right">
-          <h3 class="tl-role">Business Systems Analyst — CRM & Partner Platforms</h3>
+          <p class="tl-role">Business Systems Analyst — CRM &amp; Partner Platforms</p>
           <ul class="tl-bullets">
             <li>Led CRM and partner platforms for 50,000+ users; managed migrations of 5,000+ partners and 1M+ customers across global regions.</li>
           </ul>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -938,11 +1138,21 @@ footer p{font-size:12px;color:var(--ink-muted)}
   <p>© 2026 Mohamed Shabeer Usman · Product & Technology Leader · shabeertech.com</p>
 </footer>
 
+<footer>
+  <p>© 2026 Mohamed Shabeer Usman · Product & Technology Leader · shabeertech.com</p>
+</footer>
+
+<!-- FLOATING CTA -->
+<a href="mailto:shabeerccc@gmail.com" class="floating-cta" title="Let's Talk">
+  <span class="floating-cta-dot"></span>
+  <span class="fcta-text">Let's Talk</span>
+</a>
+
 <script>
 function toggleCase(el){
-  const wasOpen=el.classList.contains('open');
-  document.querySelectorAll('.case-card').forEach(c=>c.classList.remove('open'));
-  if(!wasOpen)el.classList.add('open');
+  var wasOpen = el.classList.contains('open');
+  document.querySelectorAll('.case-card').forEach(function(c){ c.classList.remove('open'); });
+  if(!wasOpen) el.classList.add('open');
 }
 function toggleMenu(){
   document.getElementById('mobileNav').classList.toggle('open');
@@ -950,16 +1160,15 @@ function toggleMenu(){
 function closeMenu(){
   document.getElementById('mobileNav').classList.remove('open');
 }
-// Scroll-triggered fade-in for sections
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
+var obs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
     if(e.isIntersecting){
       e.target.style.opacity='1';
       e.target.style.transform='translateY(0)';
     }
   });
-},{threshold:.1});
-document.querySelectorAll('.exp-card,.case-card,.phil-point,.tl-item,.contact-link').forEach(el=>{
+},{threshold:0.1});
+document.querySelectorAll('.exp-card,.case-card,.phil-point,.tl-item,.contact-link,.wid-card').forEach(function(el){
   el.style.opacity='0';
   el.style.transform='translateY(16px)';
   el.style.transition='opacity .5s cubic-bezier(.22,1,.36,1), transform .5s cubic-bezier(.22,1,.36,1)';
