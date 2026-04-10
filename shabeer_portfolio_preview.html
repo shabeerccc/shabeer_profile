@@ -1,0 +1,404 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+  #port * { box-sizing: border-box; margin: 0; padding: 0; }
+  #port {
+    --navy: #0B1F3A; --accent: #E8602C; --accent-light: #f5845c;
+    --cream: #FAF8F4; --cream-dark: #F0EDE6; --text: #0B1F3A;
+    --text-mid: #3a5270; --text-muted: #7a9ab8; --white: #ffffff;
+    --border: rgba(11,31,58,0.1);
+    --serif: 'DM Serif Display', serif; --sans: 'DM Sans', sans-serif;
+    font-family: var(--sans); color: var(--text); background: var(--cream);
+    font-size: 14px; line-height: 1.6;
+  }
+  /* NAV */
+  #port .pnav {
+    background: var(--cream); border-bottom: 1px solid var(--border);
+    padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 48px;
+  }
+  #port .pnav-brand { font-family: var(--serif); font-size: 18px; color: var(--navy); }
+  #port .pnav-links { display: flex; gap: 1.5rem; list-style: none; }
+  #port .pnav-links a { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-mid); text-decoration: none; cursor: pointer; }
+  #port .pnav-links a:hover { color: var(--accent); }
+
+  /* HERO */
+  #port .hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; }
+  #port .hero-left {
+    background: var(--navy); padding: 3rem 3rem 2.5rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  #port .hero-eyebrow { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  #port .hero-name { font-family: var(--serif); font-size: 2.6rem; line-height: 1.05; color: var(--white); margin-bottom: 1rem; letter-spacing: -0.02em; }
+  #port .hero-sub { font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.7; margin-bottom: 2rem; }
+  #port .hero-stats { display: flex; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; }
+  #port .stat-num { font-family: var(--serif); font-size: 1.6rem; color: var(--white); display: block; line-height: 1; }
+  #port .stat-label { font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 3px; display: block; }
+  #port .hero-right { background: var(--cream-dark); display: flex; flex-direction: column; }
+  #port .hero-photo { flex: 1; overflow: hidden; position: relative; min-height: 280px; background: #1a3557; display: flex; align-items: center; justify-content: center; }
+  #port .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  #port .photo-placeholder { font-family: var(--serif); font-size: 4rem; color: rgba(255,255,255,0.2); }
+  #port .hero-tags { padding: 1.5rem 2rem; }
+  #port .tags-label { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.8rem; }
+  #port .tags-wrap { display: flex; flex-wrap: wrap; gap: 6px; }
+  #port .tag {
+    font-size: 11px; padding: 5px 12px; border: 1px solid var(--border);
+    color: var(--text-mid); background: var(--white); cursor: pointer; border-radius: 2px; transition: all 0.15s;
+  }
+  #port .tag:hover, #port .tag.active { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+  /* SUMMARY */
+  #port .summary { background: var(--white); padding: 3rem 2rem; }
+  #port .sec-label { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  #port .sec-heading { font-family: var(--serif); font-size: 1.8rem; color: var(--navy); line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+  #port .divider { width: 36px; height: 2px; background: var(--accent); margin: 1rem 0 1.5rem; }
+  #port .sum-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  #port .sum-body { font-size: 13px; font-weight: 300; line-height: 1.85; color: var(--text); }
+  #port .sum-body p { margin-bottom: 1rem; }
+  #port .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); }
+  #port .skill-card { background: var(--cream); padding: 1rem; }
+  #port .sk-label { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.4rem; }
+  #port .sk-title { font-family: var(--serif); font-size: 14px; color: var(--navy); margin-bottom: 0.3rem; }
+  #port .sk-items { font-size: 11px; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
+
+  /* EXPERIENCE */
+  #port .experience { background: var(--navy); padding: 3rem 2rem; }
+  #port .experience .sec-heading { color: var(--white); }
+  #port .exp-item { display: grid; grid-template-columns: 140px 1fr; border-top: 1px solid rgba(255,255,255,0.06); }
+  #port .exp-item:first-child { border-top: none; }
+  #port .exp-left { padding: 1.5rem 1.5rem 1.5rem 0; }
+  #port .exp-co { font-size: 11px; font-weight: 500; color: var(--white); margin-bottom: 2px; }
+  #port .exp-period { font-size: 10px; color: var(--text-muted); }
+  #port .exp-right { padding: 1.5rem 0 1.5rem 1.5rem; border-left: 1px solid rgba(255,255,255,0.08); }
+  #port .exp-role { font-family: var(--serif); font-size: 16px; color: var(--white); margin-bottom: 0.75rem; }
+  #port .exp-list { list-style: none; }
+  #port .exp-list li { font-size: 12px; font-weight: 300; color: var(--text-muted); padding: 3px 0 3px 1rem; position: relative; line-height: 1.5; }
+  #port .exp-list li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 10px; top: 4px; }
+  #port .exp-tag { display: inline-block; background: rgba(232,96,44,0.12); color: var(--accent-light); font-size: 10px; padding: 2px 8px; margin-top: 6px; border-left: 2px solid var(--accent); }
+
+  /* EXPERTISE */
+  #port .expertise { background: var(--cream); padding: 3rem 2rem; }
+  #port .etabs { display: flex; border-bottom: 1px solid var(--border); margin-bottom: 2rem; gap: 0; }
+  #port .etab { font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 18px; border: none; background: none; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; font-family: var(--sans); white-space: nowrap; transition: all 0.15s; }
+  #port .etab.active, #port .etab:hover { color: var(--navy); border-bottom-color: var(--accent); }
+  #port .epanel { display: none; }
+  #port .epanel.active { display: block; }
+  #port .ep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem; }
+  #port .ep-card { background: var(--white); border: 1px solid var(--border); padding: 1.5rem; }
+  #port .ep-sub { font-size: 10px; color: var(--text-muted); margin-bottom: 0.4rem; letter-spacing: 0.04em; }
+  #port .ep-title { font-family: var(--serif); font-size: 16px; color: var(--navy); margin-bottom: 0.5rem; }
+  #port .ep-body { font-size: 12px; font-weight: 300; color: var(--text-mid); line-height: 1.7; }
+  #port .ep-metric { display: flex; align-items: baseline; gap: 6px; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+  #port .ep-num { font-family: var(--serif); font-size: 20px; color: var(--accent); }
+  #port .ep-mlabel { font-size: 11px; color: var(--text-muted); }
+  #port .pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 0.75rem; }
+  #port .pill { font-size: 10px; color: var(--text-mid); background: var(--cream); padding: 3px 9px; border: 1px solid var(--border); }
+  #port .story { background: var(--white); border-left: 3px solid var(--accent); padding: 1.5rem; margin-top: 1.5rem; }
+  #port .story h4 { font-family: var(--serif); font-size: 15px; color: var(--navy); margin-bottom: 0.5rem; }
+  #port .story p { font-size: 12px; font-weight: 300; color: var(--text-mid); line-height: 1.7; margin-bottom: 0.5rem; }
+  #port .story .result { font-size: 11px; color: var(--accent); padding-top: 0.5rem; border-top: 1px solid var(--border); }
+  #port .cbox { background: var(--navy); padding: 1.5rem; margin-top: 1.5rem; }
+  #port .cbox h4 { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+  #port .cbox p { font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.7; }
+  #port .cbox strong { color: var(--white); font-weight: 400; }
+
+  /* PROJECTS */
+  #port .projects { background: var(--white); padding: 3rem 2rem; }
+  #port .proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); }
+  #port .proj-card { background: var(--white); padding: 1.5rem; position: relative; overflow: hidden; transition: background 0.15s; }
+  #port .proj-card:hover { background: var(--cream); }
+  #port .proj-num { font-family: var(--serif); font-size: 2.5rem; color: var(--cream-dark); position: absolute; top: 0.75rem; right: 1rem; line-height: 1; pointer-events: none; }
+  #port .proj-tag { font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  #port .proj-title { font-family: var(--serif); font-size: 15px; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.2; }
+  #port .proj-body { font-size: 12px; font-weight: 300; color: var(--text-mid); line-height: 1.7; margin-bottom: 1rem; }
+  #port .proj-link { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--navy); text-decoration: none; font-weight: 500; border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+
+  /* CONTACT */
+  #port .contact { background: var(--navy); padding: 3rem 2rem; text-align: center; }
+  #port .contact .sec-heading { color: var(--white); margin-bottom: 0.5rem; }
+  #port .contact-body { font-size: 13px; font-weight: 300; color: var(--text-muted); max-width: 400px; margin: 0 auto 2rem; line-height: 1.8; }
+  #port .clinks { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  #port .clink { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); text-decoration: none; border: 1px solid rgba(255,255,255,0.2); padding: 10px 20px; transition: all 0.15s; cursor: pointer; }
+  #port .clink:hover, #port .clink.primary { background: var(--accent); border-color: var(--accent); }
+
+  /* FOOTER */
+  #port footer { background: #060F1D; padding: 1.2rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+  #port footer p { font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; }
+</style>
+
+<div id="port">
+  <!-- NAV -->
+  <div class="pnav">
+    <span class="pnav-brand">MSU</span>
+    <ul class="pnav-links">
+      <li><a>Profile</a></li>
+      <li><a>Experience</a></li>
+      <li><a>Expertise</a></li>
+      <li><a>Projects</a></li>
+      <li><a>Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow">Principal Product & Technology Leader · Plano, TX</p>
+      <h1 class="hero-name">Mohamed<br>Shabeer<br>Usman</h1>
+      <p class="hero-sub">Product and technology leader building GenAI, agentic, and data platforms at enterprise scale — bridging strategy, system design, and team execution.</p>
+      <div class="hero-stats">
+        <div><span class="stat-num">14+</span><span class="stat-label">Years Experience</span></div>
+        <div><span class="stat-num">90%+</span><span class="stat-label">AI Accuracy</span></div>
+        <div><span class="stat-num">$1B+</span><span class="stat-label">ARR Contributed</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/220px-Image_created_with_a_mobile_phone.png" alt="" style="display:none">
+        <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:12px;">
+          <div style="width:80px;height:80px;border-radius:50%;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;">
+            <span style="font-family:var(--serif);font-size:1.8rem;color:rgba(255,255,255,0.4);">MSU</span>
+          </div>
+          <p style="font-size:11px;color:var(--text-muted);letter-spacing:0.06em;">Photo loads from local file</p>
+        </div>
+      </div>
+      <div class="hero-tags">
+        <p class="tags-label">Areas of Expertise</p>
+        <div class="tags-wrap">
+          <span class="tag active" onclick="switchTab('ai',this)">GenAI & Agentic Systems</span>
+          <span class="tag" onclick="switchTab('data',this)">Data Platforms</span>
+          <span class="tag" onclick="switchTab('digital',this)">Digital Transformation</span>
+          <span class="tag" onclick="switchTab('distributed',this)">Distributed Systems</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary">
+    <p class="sec-label">Executive Summary</p>
+    <h2 class="sec-heading">Building products that <em>move the needle</em></h2>
+    <div class="divider"></div>
+    <div class="sum-grid">
+      <div class="sum-body">
+        <p>Product and technology leader with deep expertise in GenAI, agentic systems, and enterprise data platforms. I operate at the intersection of roadmap strategy and engineering execution — architecting systems, defining technical contracts, and leading teams from design through production.</p>
+        <p>At Procore, I served as AI lead, shipping a multimodal RAG and agentic platform adopted by 3,000+ enterprise customers with 90%+ response accuracy. At Autodesk, I led data and ML products that contributed to $1B ARR and ~25% YoY revenue growth.</p>
+        <p>Great AI products are built on rigorous evaluation, strong governance, and tight feedback loops between data quality and user experience.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card"><p class="sk-label">AI & GenAI</p><h3 class="sk-title">Agentic Systems</h3><p class="sk-items">RAG · LLM integration · Multimodal AI · Governance · Prompt engineering</p></div>
+        <div class="skill-card"><p class="sk-label">Architecture</p><h3 class="sk-title">System Design</h3><p class="sk-items">Microservices · REST/Graph APIs · Multi-tenant · Latency optimization</p></div>
+        <div class="skill-card"><p class="sk-label">ML & MLOps</p><h3 class="sk-title">Model Lifecycle</h3><p class="sk-items">Evaluation · Feedback loops · Versioning · Monitoring · Metrics</p></div>
+        <div class="skill-card"><p class="sk-label">Data & Cloud</p><h3 class="sk-title">Platform Scale</h3><p class="sk-items">Snowflake · Databricks · Spark/Flink · AWS · GCP · Azure</p></div>
+        <div class="skill-card"><p class="sk-label">Computer Vision</p><h3 class="sk-title">Document AI</h3><p class="sk-items">YOLO · OCR · BERT · Document intelligence · Image analysis</p></div>
+        <div class="skill-card"><p class="sk-label">Product</p><h3 class="sk-title">Technology & Product Leadership</h3><p class="sk-items">Roadmap · Design reviews · API contracts · Team growth · Delivery</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="experience">
+    <p class="sec-label">Career</p>
+    <h2 class="sec-heading" style="color:var(--white);">Where I've built</h2>
+    <div class="divider"></div>
+    <div>
+      <div class="exp-item" style="border-top:none;">
+        <div class="exp-left"><p class="exp-co">Procore Technologies</p><p class="exp-period">Feb 2022 – Feb 2026</p></div>
+        <div class="exp-right">
+          <h3 class="exp-role">Principal Product & Technology Leader — Data & AI</h3>
+          <ul class="exp-list">
+            <li>Lifted response accuracy from ~45% to <strong style="color:#fff;">90%+</strong> via just-in-time grounding workflows, eliminating hallucinations.</li>
+            <li>Shipped multimodal RAG pipelines adopted across <strong style="color:#fff;">3,000+ enterprise customers</strong>.</li>
+            <li>Built supervisor orchestration layer with dynamic intent-routing to domain-specific agents.</li>
+            <li>Led cross-functional team — owning roadmap, technical design reviews, and delivery accountability.</li>
+            <li>Drove engineering quality standards: API contracts, system architecture reviews, NFR governance.</li>
+          </ul>
+          <span class="exp-tag">Plano, TX · Construction Tech · Enterprise AI</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-left"><p class="exp-co">Autodesk, Inc.</p><p class="exp-period">Sep 2013 – Feb 2022</p></div>
+        <div class="exp-right">
+          <h3 class="exp-role">Technical Product Manager — Data & ML</h3>
+          <ul class="exp-list">
+            <li>AI/ML churn and buying-readiness models → <strong style="color:#fff;">~25% YoY revenue growth</strong>.</li>
+            <li>Subscription APIs contributing to <strong style="color:#fff;">~$1B ARR</strong> in FY19.</li>
+            <li>Petabyte data platform: 5+ PB ingested across 10,000+ tables globally.</li>
+          </ul>
+          <span class="exp-tag">San Francisco, CA · Design Software</span>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-left"><p class="exp-co">Cognizant</p><p class="exp-period">Mar 2011 – Sep 2013</p></div>
+        <div class="exp-right">
+          <h3 class="exp-role">Business Systems Analyst — CRM & Partner Platforms</h3>
+          <ul class="exp-list"><li>CRM platforms for 50,000+ users; 1M+ customer migrations across global regions.</li></ul>
+          <span class="exp-tag">San Francisco, CA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXPERTISE -->
+  <div class="expertise">
+    <p class="sec-label">Deep Dives</p>
+    <h2 class="sec-heading">Areas of Expertise</h2>
+    <div class="divider"></div>
+    <div class="etabs">
+      <button class="etab active" onclick="showPanel('ai',this)">GenAI & Agentic</button>
+      <button class="etab" onclick="showPanel('digital',this)">Digital Transformation</button>
+      <button class="etab" onclick="showPanel('data',this)">Data Platforms</button>
+      <button class="etab" onclick="showPanel('distributed',this)">Distributed Systems</button>
+    </div>
+    <div id="ep-ai" class="epanel active">
+      <div class="ep-grid">
+        <div class="ep-card">
+          <p class="ep-sub">Retrieval-Augmented Generation</p>
+          <h3 class="ep-title">Multimodal RAG Architecture</h3>
+          <p class="ep-body">Unified hybrid search platform combining structured and unstructured data in Elasticsearch with vector embeddings. Supports text, document, and image workloads with real-time grounding.</p>
+          <div class="ep-metric"><span class="ep-num">90%+</span><span class="ep-mlabel">Response accuracy across 3,000+ enterprise customers</span></div>
+          <div class="pills"><span class="pill">Elasticsearch</span><span class="pill">Vector Embeddings</span><span class="pill">MCP Protocol</span><span class="pill">AWS/GCP/Azure</span></div>
+        </div>
+        <div class="ep-card">
+          <p class="ep-sub">Orchestration & Routing</p>
+          <h3 class="ep-title">Supervisor Agent Architecture</h3>
+          <p class="ep-body">Dynamic intent-routing layer directing traffic to domain-specific agents using real-time manifest resolution. Policy-driven execution with agent registries, versioning, and ML exclusions.</p>
+          <div class="ep-metric"><span class="ep-num">&lt;500ms</span><span class="ep-mlabel">P95/P99 latency for agentic retrieval</span></div>
+          <div class="pills"><span class="pill">GPT/Claude/Gemini</span><span class="pill">RAG Pipelines</span><span class="pill">Intent Classification</span></div>
+        </div>
+      </div>
+      <div class="cbox">
+        <h4>Agent Type Tradeoffs</h4>
+        <p><strong>Feature agents</strong> optimize for speed. <strong>Manifest agents</strong> optimize for accuracy and scale. <strong>Custom agents</strong> optimize for flexibility in complex workflows — each trading power for complexity.</p>
+      </div>
+    </div>
+    <div id="ep-digital" class="epanel">
+      <div class="ep-grid">
+        <div class="ep-card">
+          <p class="ep-sub">E-commerce & ERP Integration</p>
+          <h3 class="ep-title">Order & Subscription Management</h3>
+          <p class="ep-body">End-to-end order flow: .com → SAP (order creation) → Salesforce (subscription contract with entitlements, product line items, start/end dates).</p>
+          <div class="ep-metric"><span class="ep-num">$300M+</span><span class="ep-mlabel">Revenue generated in 2024–2025</span></div>
+          <div class="pills"><span class="pill">SAP OMS</span><span class="pill">Salesforce CPQ</span><span class="pill">REST APIs</span></div>
+        </div>
+        <div class="ep-card">
+          <p class="ep-sub">Territory & Incentive Management</p>
+          <h3 class="ep-title">Sales Commissions Platform</h3>
+          <p class="ep-body">Complete commissions management in Salesforce — SAP order data + opportunity data + employee commission plans, with auto-assignment via territory rules.</p>
+          <div class="ep-metric"><span class="ep-num">Territory</span><span class="ep-mlabel">Over/under performance visibility by geography & product</span></div>
+          <div class="pills"><span class="pill">Salesforce</span><span class="pill">Workday</span><span class="pill">SAP Integration</span></div>
+        </div>
+      </div>
+      <div class="cbox">
+        <h4>Integration Challenge</h4>
+        <p><strong>Locking records, rate limits, and concurrency</strong> are the three hardest production problems — each requiring retry logic, idempotency guarantees, and circuit breaker patterns.</p>
+      </div>
+    </div>
+    <div id="ep-data" class="epanel">
+      <div class="ep-grid">
+        <div class="ep-card">
+          <p class="ep-sub">Big Data Infrastructure</p>
+          <h3 class="ep-title">Petabyte-Scale Data Platform</h3>
+          <p class="ep-body">Architected Autodesk's big data platform ingesting 5+ PB across 10,000+ tables, powering global analytics, ML models, and executive reporting.</p>
+          <div class="ep-metric"><span class="ep-num">5+ PB</span><span class="ep-mlabel">Ingested across 10,000+ tables globally</span></div>
+          <div class="pills"><span class="pill">Snowflake</span><span class="pill">Databricks</span><span class="pill">Spark/Flink</span></div>
+        </div>
+        <div class="ep-card">
+          <p class="ep-sub">Cross-Domain Reporting</p>
+          <h3 class="ep-title">360° Executive Dashboard</h3>
+          <p class="ep-body">Cross-tool 360° reporting joining Financials, PMQS, and other domains. Reduced full rebuild write latency from 45 minutes to near-real-time via incremental materialization.</p>
+          <div class="ep-metric"><span class="ep-num">5 min</span><span class="ep-mlabel">Near-real-time reporting (down from 45 min)</span></div>
+          <div class="pills"><span class="pill">DynamoDB</span><span class="pill">MongoDB</span><span class="pill">Incremental Materialization</span></div>
+        </div>
+      </div>
+    </div>
+    <div id="ep-distributed" class="epanel">
+      <div class="ep-grid">
+        <div class="ep-card">
+          <p class="ep-sub">Storage Architecture</p>
+          <h3 class="ep-title">Runtime Feature Store Migration</h3>
+          <p class="ep-body">DynamoDB (K/V) → DocumentDB → native MongoDB after query plan audit. Each migration driven by hitting architectural ceilings: no native aggregation, then P99 SLO failures.</p>
+          <div class="ep-metric"><span class="ep-num">&lt;250ms</span><span class="ep-mlabel">P99 SLO achieved after MongoDB migration</span></div>
+          <div class="pills"><span class="pill">DynamoDB</span><span class="pill">DocumentDB</span><span class="pill">MongoDB</span></div>
+        </div>
+        <div class="ep-card">
+          <p class="ep-sub">CAP Theorem in Practice</p>
+          <h3 class="ep-title">Consistency vs. Availability</h3>
+          <p class="ep-body">Partition strategy: top 50 enterprise customers got dedicated partitions. Incremental materialization traded some consistency for 5-min availability SLA, with full consistency guaranteed within 10 minutes.</p>
+          <div class="ep-metric"><span class="ep-num">10 min</span><span class="ep-mlabel">Full consistency via incremental batch processing</span></div>
+          <div class="pills"><span class="pill">CAP Theorem</span><span class="pill">Eventual Consistency</span><span class="pill">Partition Strategy</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="projects">
+    <p class="sec-label">Personal Projects</p>
+    <h2 class="sec-heading">Built on nights & weekends</h2>
+    <div class="divider"></div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <span class="proj-num">01</span>
+        <p class="proj-tag">Python · FastAPI · AI</p>
+        <h3 class="proj-title">Stock Digest — AI-Powered Daily Analysis Platform</h3>
+        <p class="proj-body">98 stocks across 15 sectors with 6-dimension scoring (Halal, Hedge Fund, Trend, Fundamental), AI-generated insights, and automated HTML email delivery.</p>
+        <a class="proj-link">github.com/shabeerccc/cursor_email_digest →</a>
+      </div>
+      <div class="proj-card">
+        <span class="proj-num">02</span>
+        <p class="proj-tag">Next.js · TypeScript · Vercel</p>
+        <h3 class="proj-title">Texas UPS — B2B Solar & Data Center Power Website</h3>
+        <p class="proj-body">Full-stack B2B app with serverless API routes, lead capture, mobile-first design, and automated Vercel deployment. Built with AI-first workflow.</p>
+        <a class="proj-link">texasups.vercel.app →</a>
+      </div>
+      <div class="proj-card">
+        <span class="proj-num">A</span>
+        <p class="proj-tag">Procore Technologies</p>
+        <h3 class="proj-title">CV & Location Intelligence Pipeline</h3>
+        <p class="proj-body">YOLO + OCR + BERT pipeline auto-building location hierarchies from construction blueprints.</p>
+      </div>
+      <div class="proj-card">
+        <span class="proj-num">B</span>
+        <p class="proj-tag">Autodesk · FY19</p>
+        <h3 class="proj-title">Subscription Migration APIs</h3>
+        <p class="proj-body">Transactional microservices enabling Autodesk's license-to-subscription pivot — contributing to the $1B ARR milestone.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact">
+    <p class="sec-label">Get in Touch</p>
+    <h2 class="sec-heading">Let's build something remarkable</h2>
+    <div class="divider" style="margin:1rem auto 1.5rem;"></div>
+    <p class="contact-body">Open to senior and principal roles in AI, data platforms, and enterprise SaaS. Based in Plano, TX.</p>
+    <div class="clinks">
+      <span class="clink primary">shabeerccc@gmail.com</span>
+      <span class="clink">LinkedIn</span>
+      <span class="clink">GitHub</span>
+      <span class="clink">224-595-2177</span>
+    </div>
+  </div>
+
+  <footer>
+    <p>Mohamed Shabeer Usman · Principal Product & Technology Leader · Plano, TX</p>
+    <p>MBA · Keller Graduate School &nbsp;|&nbsp; BS EEE · Dr. MGR University</p>
+  </footer>
+</div>
+
+<script>
+function showPanel(id, btn) {
+  document.querySelectorAll('#port .epanel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('#port .etab').forEach(t => t.classList.remove('active'));
+  document.getElementById('ep-' + id).classList.add('active');
+  if(btn) btn.classList.add('active');
+}
+function switchTab(id, tag) {
+  document.querySelectorAll('#port .tag').forEach(t => t.classList.remove('active'));
+  if(tag) tag.classList.add('active');
+  showPanel(id);
+  document.querySelectorAll('#port .etab').forEach(t => {
+    if(t.textContent.toLowerCase().includes(id === 'ai' ? 'genai' : id === 'digital' ? 'digital' : id === 'data' ? 'data' : 'distrib')) t.classList.add('active');
+  });
+  document.getElementById('port').querySelector('.expertise').scrollIntoView({behavior:'smooth'});
+}
+</script>
