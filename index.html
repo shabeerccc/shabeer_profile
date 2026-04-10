@@ -89,15 +89,15 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .engage-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
 .engage-title{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);color:var(--ink);letter-spacing:-.02em;line-height:1.1}
 .engage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.engage-card{background:#1C2333;border-radius:20px;padding:28px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s}
+.engage-card{background:#1E2D42;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s}
 .engage-card::after{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.03);pointer-events:none}
 .engage-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.28),0 4px 16px rgba(0,0,0,.14)}
 .engage-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
-.engage-num{font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,.22);letter-spacing:.06em}
+.engage-num{font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,.4);letter-spacing:.06em}
 .engage-accent-line{height:2px;width:32px;border-radius:2px}
-.engage-title-text{font-size:17px;font-weight:600;color:#fff;margin-bottom:10px;letter-spacing:-.01em;line-height:1.2}
-.engage-body{font-size:13px;font-weight:300;color:rgba(255,255,255,.58);line-height:1.75;margin-bottom:20px;flex:1}
-.engage-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.7);font-size:11px;font-weight:500;padding:5px 14px;border-radius:20px;letter-spacing:.04em;align-self:flex-start}
+.engage-title-text{font-size:17px;font-weight:600;color:#FFFFFF;margin-bottom:12px;letter-spacing:-.01em;line-height:1.2}
+.engage-body{font-size:13.5px;font-weight:400;color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:20px;flex:1}
+.engage-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:500;padding:6px 14px;border-radius:20px;letter-spacing:.04em;align-self:flex-start}
 .engage-pill-dot{width:5px;height:5px;border-radius:50%;background:#34D399;flex-shrink:0}
 
 /* ─────────────────────────────────────────
@@ -105,25 +105,25 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
    Dark bg, 3 panels side-by-side with rhombus numbers
    Story: "Here is what I am world-class at"
 ───────────────────────────────────────── */
-.spec-section{background:#0A0F1E;padding:80px 0;position:relative;overflow:hidden}
+.spec-section{background:#0D1521;padding:80px 0;position:relative;overflow:hidden}
 .spec-section::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(15,98,254,.07) 0%,transparent 70%);pointer-events:none}
 .spec-header{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:56px}
-.spec-header-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(15,98,254,.8);margin-bottom:10px}
+.spec-header-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#60A5FA;margin-bottom:10px}
 .spec-header-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);color:#fff;line-height:1.1;letter-spacing:-.02em}
 .spec-header-title em{color:#60A5FA;font-style:italic}
-.spec-header-sub{font-size:14px;font-weight:300;color:rgba(255,255,255,.4);line-height:1.85;align-self:end}
-.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden}
-.spec-card{background:#0D1625;padding:40px 36px;position:relative;overflow:hidden;transition:background .2s}
-.spec-card:hover{background:#111D2E}
+.spec-header-sub{font-size:14px;font-weight:400;color:rgba(255,255,255,.65);line-height:1.85;align-self:end}
+.spec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:20px;overflow:hidden}
+.spec-card{background:#152035;padding:40px 36px;position:relative;overflow:hidden;transition:background .2s}
+.spec-card:hover{background:#1A2840}
 .spec-top-bar{height:3px;margin-bottom:32px;border-radius:2px}
 .spec-rhombus{width:50px;height:50px;position:relative;margin-bottom:24px}
 .spec-rhombus-bg{width:50px;height:50px;transform:rotate(45deg);border-radius:6px;position:absolute;top:0;left:0}
 .spec-rhombus-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.25rem;color:#fff;z-index:1}
-.spec-card-title{font-size:17px;font-weight:600;color:#fff;margin-bottom:12px;letter-spacing:-.01em;line-height:1.25}
-.spec-card-body{font-size:13px;font-weight:300;color:rgba(255,255,255,.48);line-height:1.85;margin-bottom:24px}
+.spec-card-title{font-size:17px;font-weight:600;color:#FFFFFF;margin-bottom:12px;letter-spacing:-.01em;line-height:1.25}
+.spec-card-body{font-size:13.5px;font-weight:400;color:rgba(255,255,255,.78);line-height:1.85;margin-bottom:24px}
 .spec-tags{display:flex;flex-wrap:wrap;gap:6px}
-.spec-tag{font-size:11px;color:rgba(255,255,255,.4);background:rgba(255,255,255,.05);padding:4px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.08);transition:all .15s}
-.spec-card:hover .spec-tag{color:rgba(255,255,255,.6);background:rgba(255,255,255,.08)}
+.spec-tag{font-size:11px;color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);padding:4px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.14);transition:all .15s}
+.spec-card:hover .spec-tag{color:rgba(255,255,255,.9);background:rgba(255,255,255,.12)}
 
 /* ─────────────────────────────────────────
    SECTION 3 — CASE STUDIES
@@ -293,7 +293,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
       <li><a href="#case-studies">Case Studies</a></li>
       <li><a href="#experience">Experience</a></li>
     </ul>
-    <a href="mailto:shabeerccc@gmail.com" class="nav-cta">Let's Talk</a>
+    <a href="/cdn-cgi/l/email-protection#55263d3437303027363636153238343c397b363a38" class="nav-cta">Let's Talk</a>
     <button class="nav-menu-btn" onclick="toggleMenu()" aria-label="Menu">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
     </button>
@@ -305,7 +305,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
   <a href="#specialization" onclick="closeMenu()">Expertise</a>
   <a href="#case-studies" onclick="closeMenu()">Case Studies</a>
   <a href="#experience" onclick="closeMenu()">Experience</a>
-  <a href="mailto:shabeerccc@gmail.com" onclick="closeMenu()">Contact</a>
+  <a href="/cdn-cgi/l/email-protection#1e6d767f7c7b7b6c7d7d7d5e79737f7772307d7173" onclick="closeMenu()">Contact</a>
 </div>
 
 <!-- ═══════════════════════════════════════
@@ -727,7 +727,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <h2 class="contact-title">Let's build something remarkable</h2>
         <p class="contact-sub">Open to senior and principal product &amp; technology leadership roles, consulting engagements, and fractional CTO opportunities. Based in Plano, TX — available globally.</p>
         <div class="contact-links">
-          <a href="mailto:shabeerccc@gmail.com" class="contact-link"><div class="contact-link-icon">✉️</div><div><span class="contact-link-label">Email</span><span class="contact-link-val">shabeerccc@gmail.com</span></div></a>
+          <a href="/cdn-cgi/l/email-protection#eb98838a898e8e99888888ab8c868a8287c5888486" class="contact-link"><div class="contact-link-icon">✉️</div><div><span class="contact-link-label">Email</span><span class="contact-link-val"><span class="__cf_email__" data-cfemail="eb98838a898e8e99888888ab8c868a8287c5888486">[email&#160;protected]</span></span></div></a>
           <a href="https://linkedin.com/in/mohamedshabeerusman" target="_blank" class="contact-link"><div class="contact-link-icon">💼</div><div><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">mohamedshabeerusman</span></div></a>
           <a href="https://github.com/shabeerccc" target="_blank" class="contact-link"><div class="contact-link-icon">⚡</div><div><span class="contact-link-label">GitHub</span><span class="contact-link-val">github.com/shabeerccc</span></div></a>
           <a href="tel:2245952177" class="contact-link"><div class="contact-link-icon">📞</div><div><span class="contact-link-label">Phone</span><span class="contact-link-val">224-595-2177</span></div></a>
@@ -737,7 +737,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <div class="availability"><span class="avail-dot"></span>Currently available for new opportunities</div>
         <h3 class="cta-box-title">Ready to bring AI products from prototype to production?</h3>
         <p class="cta-box-body">Whether you need a fractional CPO, a CTO partner, or someone to lead your AI platform from strategy to shipped — I've done it at enterprise scale and I can do it for you.</p>
-        <a href="mailto:shabeerccc@gmail.com" class="cta-box-btn">Start a conversation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a href="/cdn-cgi/l/email-protection#a8dbc0c9cacdcddacbcbcbe8cfc5c9c1c486cbc7c5" class="cta-box-btn">Start a conversation <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <p style="font-size:12px;color:rgba(255,255,255,.3);margin-top:4px">MBA · Keller Graduate School &nbsp;·&nbsp; BS EEE · Dr. MGR University</p>
       </div>
     </div>
@@ -748,12 +748,12 @@ footer p{font-size:12px;color:var(--ink-muted)}
   <p>© 2026 Mohamed Shabeer Usman · Product & Technology Leader · shabeertech.com</p>
 </footer>
 
-<a href="mailto:shabeerccc@gmail.com" class="floating-cta" title="Let's Talk">
+<a href="/cdn-cgi/l/email-protection#2d5e454c4f48485f4e4e4e6d4a404c4441034e4240" class="floating-cta" title="Let's Talk">
   <span class="floating-cta-dot"></span>
   <span class="fcta-text">Let's Talk</span>
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleCase(el){
   try{
     var wasOpen=el.classList.contains('open');
@@ -776,16 +776,4 @@ document.addEventListener('DOMContentLoaded',function(){
           e.target.style.transform='translateY(0)';
         }
       });
-    },{threshold:0.07});
-    var sel='.engage-card,.spec-card,.case-card,.phil-point,.tl-item,.contact-link';
-    Array.from(document.querySelectorAll(sel)).forEach(function(el){
-      el.style.opacity='0';
-      el.style.transform='translateY(14px)';
-      el.style.transition='opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)';
-      obs.observe(el);
-    });
-  }catch(e){}
-});
-</script>
-</body>
-</html>
+    },{threshold:
