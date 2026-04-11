@@ -38,8 +38,6 @@ body{font-family:var(--sans);background:var(--surface);color:var(--ink);font-siz
 .fade-up{animation:fadeUp .6s cubic-bezier(.22,1,.36,1) both}
 .fade-up-1{animation-delay:.1s}.fade-up-2{animation-delay:.2s}.fade-up-3{animation-delay:.3s}
 .fade-up-4{animation-delay:.4s}.fade-up-5{animation-delay:.5s}
-
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.93);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:60px}
 .nav-inner{max-width:var(--max);margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:100%}
 .nav-logo{font-family:var(--serif);font-size:18px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
@@ -52,12 +50,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,
 .mobile-nav{display:none;position:fixed;top:60px;left:0;right:0;z-index:99;background:var(--surface);border-bottom:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:8px}
 .mobile-nav a{font-size:15px;color:var(--ink-mid);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--border);display:block}
 .mobile-nav a:last-child{border-bottom:none}
-
-/* LAYOUT */
 .container{max-width:var(--max);margin:0 auto;padding:0 24px}
 section{padding:72px 0}
-
-/* HERO */
 .hero{padding-top:116px;padding-bottom:80px;background:var(--surface);position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(15,98,254,.04) 0%,transparent 70%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:64px;align-items:center}
@@ -85,19 +79,12 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .photo-fallback{width:300px;height:300px;border-radius:50%;background:linear-gradient(135deg,var(--surface-3) 0%,var(--accent-soft) 100%);border:4px solid var(--surface);box-shadow:var(--shadow-lg);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;z-index:1}
 .photo-initials{font-family:var(--serif);font-size:3rem;color:var(--accent);line-height:1}
 .photo-hint{font-size:11px;color:var(--ink-muted);margin-top:8px;text-align:center;padding:0 16px}
-
-/* ─────────────────────────────────────────
-   SECTION 1 — HOW I ENGAGE
-   3 dark cards: number top-left, icon top-right
-   Story: "Here is what I can do for you"
-───────────────────────────────────────── */
 .engage-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:56px 0}
 .engage-header{text-align:center;margin-bottom:40px}
 .engage-label{font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
 .engage-title{font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);color:var(--ink);letter-spacing:-.02em;line-height:1.1}
 .engage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .engage-card{background:#1E2D42;border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:28px;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s}
-.engage-card::after{content:'';position:absolute;top:-50px;right:-50px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.03);pointer-events:none}
 .engage-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.28),0 4px 16px rgba(0,0,0,.14)}
 .engage-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
 .engage-num{font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,.4);letter-spacing:.06em}
@@ -106,12 +93,6 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .engage-body{font-size:13.5px;font-weight:400;color:rgba(255,255,255,.82);line-height:1.8;margin-bottom:20px;flex:1}
 .engage-pill{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:11px;font-weight:500;padding:6px 14px;border-radius:20px;letter-spacing:.04em;align-self:flex-start}
 .engage-pill-dot{width:5px;height:5px;border-radius:50%;background:#34D399;flex-shrink:0}
-
-/* ─────────────────────────────────────────
-   SECTION 2 — CORE SPECIALIZATION
-   Dark bg, 3 panels side-by-side with rhombus numbers
-   Story: "Here is what I am world-class at"
-───────────────────────────────────────── */
 .spec-section{background:#0D1521;padding:80px 0;position:relative;overflow:hidden}
 .spec-section::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(15,98,254,.07) 0%,transparent 70%);pointer-events:none}
 .spec-header{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:56px}
@@ -131,13 +112,11 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .spec-tags{display:flex;flex-wrap:wrap;gap:6px}
 .spec-tag{font-size:11px;color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);padding:4px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.14);transition:all .15s}
 .spec-card:hover .spec-tag{color:rgba(255,255,255,.9);background:rgba(255,255,255,.12)}
-
-/* ─────────────────────────────────────────
-   SECTION 3 — CASE STUDIES
-   White bg, accordion cards with left accent
-   Story: "Here is proof — real outcomes"
-───────────────────────────────────────── */
 .case-section{background:#F8F7F4}
+.sec-label{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.sec-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--ink);line-height:1.15;letter-spacing:-.02em;margin-bottom:12px}
+.sec-sub{font-size:16px;font-weight:300;color:var(--ink-mid);max-width:560px;line-height:1.75}
+.sec-header{margin-bottom:48px}
 .case-grid{display:flex;flex-direction:column;gap:12px}
 .case-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 36px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .2s,box-shadow .2s}
 .case-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--border);border-radius:4px 0 0 4px;transition:background .2s}
@@ -161,7 +140,7 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .case-section-text{font-size:14px;font-weight:300;color:var(--ink-mid);line-height:1.75}
 .case-exec-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
 .case-exec-list li{font-size:14px;font-weight:300;color:var(--ink-mid);line-height:1.65;padding-left:16px;position:relative}
-.case-exec-list li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:11px;top:3px}
+.case-exec-list li::before{content:'';position:absolute;left:0;top:9px;width:8px;height:1.5px;background:var(--accent);border-radius:2px}
 .case-impact{grid-column:1/-1;background:var(--surface-3);border:1px solid var(--border);border-radius:var(--r);padding:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .impact-item{text-align:center}
 .impact-num{font-family:var(--serif);font-size:2rem;color:var(--accent);display:block;line-height:1;margin-bottom:4px}
@@ -169,8 +148,6 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .case-stack{grid-column:1/-1}
 .stack-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .stack-pill{font-size:11px;font-weight:500;color:var(--ink-mid);background:var(--surface);border:1px solid var(--border);padding:4px 10px;border-radius:5px;font-family:monospace}
-
-/* EXPERIENCE */
 .timeline-section{background:#F8F7F4;border-top:1px solid var(--border)}
 .timeline{display:flex;flex-direction:column;gap:16px}
 .tl-item{background:var(--surface);border:1px solid #E2DDD6;border-radius:var(--r-lg);overflow:hidden;transition:box-shadow .25s,border-color .25s,transform .25s}
@@ -189,8 +166,6 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .tl-bullets{list-style:none;display:flex;flex-direction:column;gap:8px}
 .tl-bullets li{font-size:13px;font-weight:300;color:#4A5568;padding-left:18px;position:relative;line-height:1.65}
 .tl-bullets li::before{content:'';position:absolute;left:0;top:9px;width:8px;height:1.5px;background:var(--accent);border-radius:2px}
-
-/* PHILOSOPHY */
 .philosophy-section{background:#0D1B2A;padding:80px 0;position:relative;overflow:hidden}
 .philosophy-section::before{content:'';position:absolute;top:-120px;right:-120px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(15,98,254,.08) 0%,transparent 70%);pointer-events:none}
 .philosophy-section::after{content:'';position:absolute;bottom:-80px;left:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,.06) 0%,transparent 70%);pointer-events:none}
@@ -209,9 +184,7 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .phil-icon-wrap{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .phil-point-text{flex:1}
 .phil-point-title{font-size:14px;font-weight:600;color:#fff;margin-bottom:5px;letter-spacing:-.01em}
-.phil-point-body{font-size:13px;font-weight:300;color:rgba(255,255,255,.48);line-height:1.7}
-
-/* CONTACT */
+.phil-point-body{font-size:13px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.7}
 .contact-section{background:var(--surface);border-top:1px solid var(--border)}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .contact-title{font-family:var(--serif);font-size:clamp(2rem,3.5vw,3rem);color:var(--ink);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
@@ -219,28 +192,22 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .contact-links{display:flex;flex-direction:column;gap:10px}
 .contact-link{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--border);border-radius:var(--r);text-decoration:none;color:var(--ink);transition:all .2s;background:var(--surface)}
 .contact-link:hover{border-color:var(--accent);background:var(--accent-soft);color:var(--accent)}
-.contact-link-icon{width:34px;height:34px;border-radius:8px;background:var(--surface-3);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;transition:background .2s}
-.contact-link:hover .contact-link-icon{background:var(--accent);color:var(--surface)}
+.contact-link-icon{width:34px;height:34px;border-radius:8px;background:var(--surface-3);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
 .contact-link-label{font-size:12px;color:var(--ink-muted);display:block;margin-bottom:1px}
 .contact-link-val{font-size:14px;font-weight:500}
-.contact-cta-box{background:var(--ink);border-radius:var(--r-lg);padding:36px;display:flex;flex-direction:column;gap:18px}
+.contact-cta-box{background:var(--ink);border-radius:var(--r-lg);padding:36px;display:flex;flex-direction:column;gap:16px}
 .cta-box-title{font-family:var(--serif);font-size:1.5rem;color:#fff;line-height:1.2}
 .cta-box-body{font-size:14px;font-weight:300;color:rgba(255,255,255,.55);line-height:1.7}
-.cta-box-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;font-size:14px;font-weight:500;padding:11px 22px;border-radius:8px;text-decoration:none;transition:all .2s;width:fit-content}
-.cta-box-btn:hover{background:#0043CE;transform:translateY(-1px)}
+.cta-email-display{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:14px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.cta-email-addr{font-size:15px;font-weight:500;color:#fff;user-select:all;letter-spacing:.01em}
+.cta-copy-hint{font-size:11px;color:rgba(255,255,255,.4)}
 .availability{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.45)}
 .avail-dot{width:7px;height:7px;border-radius:50%;background:#34D399;animation:pulse 2s infinite}
-
-/* FLOATING CTA */
 .floating-cta{position:fixed;bottom:28px;right:28px;z-index:200;display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--surface);font-family:var(--sans);font-size:13px;font-weight:500;padding:12px 20px;border-radius:40px;text-decoration:none;box-shadow:0 4px 20px rgba(10,15,30,.25);transition:all .2s}
 .floating-cta:hover{background:var(--accent);transform:translateY(-2px)}
 .floating-cta-dot{width:7px;height:7px;border-radius:50%;background:#34D399;animation:pulse 2s infinite;flex-shrink:0}
-
-/* FOOTER */
 footer{background:var(--surface-2);border-top:1px solid var(--border);padding:24px;text-align:center}
 footer p{font-size:12px;color:var(--ink-muted)}
-
-/* RESPONSIVE */
 @media(max-width:900px){
   section{padding:52px 0}
   .hero{padding-top:92px;padding-bottom:52px}
@@ -250,18 +217,14 @@ footer p{font-size:12px;color:var(--ink-muted)}
   .hero-photo-wrap::before{inset:-10px}
   .engage-grid,.spec-grid{grid-template-columns:1fr}
   .spec-header{grid-template-columns:1fr;gap:16px}
-  .spec-grid{gap:1px}
   .case-card.open .case-body{grid-template-columns:1fr}
   .case-impact{grid-template-columns:repeat(3,1fr)}
   .phil-grid{grid-template-columns:1fr;gap:36px}
   .phil-left{position:static}
-  .phil-intro{max-width:100%}
   .contact-grid{grid-template-columns:1fr}
   .nav-links{display:none}
   .nav-menu-btn{display:flex}
   .hero-stats{gap:18px}
-  .tl-header{padding:14px 16px 12px}
-  .tl-right{padding:14px 16px 20px}
   .floating-cta .fcta-text{display:none}
   .floating-cta{padding:13px;border-radius:50%;width:48px;height:48px;justify-content:center}
   .floating-cta-dot{display:none}
@@ -279,7 +242,6 @@ footer p{font-size:12px;color:var(--ink-muted)}
 </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">
@@ -306,7 +268,6 @@ footer p{font-size:12px;color:var(--ink-muted)}
     </button>
   </div>
 </nav>
-
 <div class="mobile-nav" id="mobileNav" style="display:none">
   <a href="#engage" onclick="closeMenu()">How I Work</a>
   <a href="#specialization" onclick="closeMenu()">Expertise</a>
@@ -314,10 +275,6 @@ footer p{font-size:12px;color:var(--ink-muted)}
   <a href="#experience" onclick="closeMenu()">Experience</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
-
-<!-- ═══════════════════════════════════════
-     HERO — Who I am
-════════════════════════════════════════ -->
 <section class="hero" id="top">
   <div class="container">
     <div class="hero-grid">
@@ -330,7 +287,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
           <span>SaaS &amp; Data Systems</span><span class="hero-meta-sep"></span>
           <span>Plano, TX</span>
         </div>
-        <p class="hero-sub fade-up fade-up-2">I lead product and engineering to build customer-driven platforms powered by AI — from 0→1 to systems used by millions of enterprise customers, driving measurable business outcomes.</p>
+        <p class="hero-sub fade-up fade-up-2">I lead product and engineering to build customer-driven platforms powered by AI — from 0 to 1 to systems used by millions of enterprise customers, driving measurable business outcomes.</p>
         <div class="hero-btns fade-up fade-up-3">
           <a href="#case-studies" class="btn-primary">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -350,8 +307,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <p class="credibility-strip fade-up fade-up-5">Previously at: <span>Procore</span> · <span>Autodesk</span> · <span>Cognizant</span></p>
       </div>
       <div class="hero-photo-wrap fade-up fade-up-3">
-        <img src="profile.jpg" alt="Mohamed Shabeer Usman" class="hero-photo"
-             onerror="this.style.display='none';document.getElementById('photoFallback').style.display='flex'">
+        <img src="profile.jpg" alt="Mohamed Shabeer Usman" class="hero-photo" onerror="this.style.display='none';document.getElementById('photoFallback').style.display='flex'">
         <div class="photo-fallback" id="photoFallback" style="display:none">
           <span class="photo-initials">MSU</span>
           <span class="photo-hint">Add profile.jpg alongside index.html</span>
@@ -360,42 +316,27 @@ footer p{font-size:12px;color:var(--ink-muted)}
     </div>
   </div>
 </section>
-
-<!-- ═══════════════════════════════════════
-     SECTION 1 — HOW I ENGAGE
-     "What I can do for you" — 3 dark cards
-     Tone: Direct offer to the reader
-════════════════════════════════════════ -->
 <div class="engage-section" id="engage">
   <div class="container">
     <div class="engage-header">
       <p class="engage-label">How I engage</p>
-      <h2 class="engage-title" style="font-family:var(--serif);font-size:clamp(1.6rem,2.5vw,2.2rem);color:var(--ink);letter-spacing:-.02em">Three ways I can serve your organisation</h2>
+      <h2 class="engage-title">Three ways I can serve your organisation</h2>
     </div>
     <div class="engage-grid">
       <div class="engage-card">
-        <div class="engage-card-top">
-          <span class="engage-num">01</span>
-          <div class="engage-accent-line" style="background:linear-gradient(90deg,#0F62FE,#60A5FA)"></div>
-        </div>
+        <div class="engage-card-top"><span class="engage-num">01</span><div class="engage-accent-line" style="background:linear-gradient(90deg,#0F62FE,#60A5FA)"></div></div>
         <h3 class="engage-title-text">Fractional CTO</h3>
         <p class="engage-body">Step into your organisation as the technical co-founder you need without the full-time overhead. I architect AI and data platforms, establish engineering standards, and govern the technology decisions that determine whether your platform scales or stalls.</p>
         <span class="engage-pill"><span class="engage-pill-dot"></span>Available now</span>
       </div>
       <div class="engage-card">
-        <div class="engage-card-top">
-          <span class="engage-num">02</span>
-          <div class="engage-accent-line" style="background:linear-gradient(90deg,#7C3AED,#A78BFA)"></div>
-        </div>
+        <div class="engage-card-top"><span class="engage-num">02</span><div class="engage-accent-line" style="background:linear-gradient(90deg,#7C3AED,#A78BFA)"></div></div>
         <h3 class="engage-title-text">Principal Product Leader</h3>
         <p class="engage-body">Own the full product lifecycle for your most complex platform — from executive alignment and market positioning through roadmap execution and engineering delivery. I bridge the gap between business vision and technical reality with precision.</p>
         <span class="engage-pill"><span class="engage-pill-dot"></span>Full-time or contract</span>
       </div>
       <div class="engage-card">
-        <div class="engage-card-top">
-          <span class="engage-num">03</span>
-          <div class="engage-accent-line" style="background:linear-gradient(90deg,#0D9488,#2DD4BF)"></div>
-        </div>
+        <div class="engage-card-top"><span class="engage-num">03</span><div class="engage-accent-line" style="background:linear-gradient(90deg,#0D9488,#2DD4BF)"></div></div>
         <h3 class="engage-title-text">AI Platform Advisor</h3>
         <p class="engage-body">Transform your AI investment from prototype to reliable production system. I assess architecture, establish evaluation frameworks, define governance policies, and create the operational foundation that turns a promising model into a trustworthy enterprise product.</p>
         <span class="engage-pill"><span class="engage-pill-dot"></span>Advisory &amp; consulting</span>
@@ -403,12 +344,6 @@ footer p{font-size:12px;color:var(--ink-muted)}
     </div>
   </div>
 </div>
-
-<!-- ═══════════════════════════════════════
-     SECTION 2 — CORE SPECIALIZATION
-     "What I am world-class at" — dark panel
-     Tone: Authority, depth, proof of mastery
-════════════════════════════════════════ -->
 <section class="spec-section" id="specialization">
   <div class="container">
     <div class="spec-header">
@@ -421,68 +356,40 @@ footer p{font-size:12px;color:var(--ink-muted)}
     <div class="spec-grid">
       <div class="spec-card">
         <div class="spec-top-bar" style="background:linear-gradient(90deg,#0F62FE,transparent)"></div>
-        <div class="spec-rhombus">
-          <div class="spec-rhombus-bg" style="background:rgba(15,98,254,.15);border:1px solid rgba(15,98,254,.3)"></div>
-          <span class="spec-rhombus-num">1</span>
-        </div>
+        <div class="spec-rhombus"><div class="spec-rhombus-bg" style="background:rgba(15,98,254,.15);border:1px solid rgba(15,98,254,.3)"></div><span class="spec-rhombus-num">1</span></div>
         <h3 class="spec-card-title">Enterprise SaaS &amp; Platform Strategy</h3>
-        <p class="spec-card-body">I design and scale multi-tenant SaaS platforms that serve thousands of enterprise customers without compromising reliability, compliance, or margin. From 0→1 product strategy through platform maturity, I own the roadmap, align executive stakeholders, and lead cross-functional teams to ship products that generate measurable revenue and long-term retention at the accounts that matter most.</p>
-        <div class="spec-tags">
-          <span class="spec-tag">Multi-tenant Architecture</span><span class="spec-tag">0→1 Product Strategy</span>
-          <span class="spec-tag">Enterprise GTM</span><span class="spec-tag">Roadmap &amp; Execution</span>
-          <span class="spec-tag">Stakeholder Alignment</span><span class="spec-tag">SaaS Retention Metrics</span>
-        </div>
+        <p class="spec-card-body">I design and scale multi-tenant SaaS platforms that serve thousands of enterprise customers without compromising reliability, compliance, or margin. From 0 to 1 product strategy through platform maturity, I own the roadmap, align executive stakeholders, and lead cross-functional teams to ship products that generate measurable revenue and long-term retention.</p>
+        <div class="spec-tags"><span class="spec-tag">Multi-tenant Architecture</span><span class="spec-tag">0-1 Product Strategy</span><span class="spec-tag">Enterprise GTM</span><span class="spec-tag">Roadmap &amp; Execution</span><span class="spec-tag">Stakeholder Alignment</span><span class="spec-tag">SaaS Retention Metrics</span></div>
       </div>
       <div class="spec-card">
         <div class="spec-top-bar" style="background:linear-gradient(90deg,#7C3AED,transparent)"></div>
-        <div class="spec-rhombus">
-          <div class="spec-rhombus-bg" style="background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3)"></div>
-          <span class="spec-rhombus-num">2</span>
-        </div>
+        <div class="spec-rhombus"><div class="spec-rhombus-bg" style="background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3)"></div><span class="spec-rhombus-num">2</span></div>
         <h3 class="spec-card-title">Distributed Systems &amp; Technical Architecture</h3>
-        <p class="spec-card-body">I lead the design of distributed systems engineered for petabyte-scale data ingestion, sub-250ms latency SLOs, and enterprise-grade fault tolerance. Operating at the intersection of product and engineering, I define API contracts, govern non-functional requirements, and make the infrastructure tradeoff decisions that determine whether a platform holds up under production load or becomes a liability.</p>
-        <div class="spec-tags">
-          <span class="spec-tag">Distributed Systems Design</span><span class="spec-tag">API Contracts</span>
-          <span class="spec-tag">Microservices</span><span class="spec-tag">Cloud (AWS / GCP / Azure)</span>
-          <span class="spec-tag">Latency &amp; Scale SLOs</span><span class="spec-tag">CAP Theorem Applied</span>
-        </div>
+        <p class="spec-card-body">I lead the design of distributed systems engineered for petabyte-scale data ingestion, sub-250ms latency SLOs, and enterprise-grade fault tolerance. Operating at the intersection of product and engineering, I define API contracts, govern non-functional requirements, and make the infrastructure tradeoff decisions that determine whether a platform holds up under production load.</p>
+        <div class="spec-tags"><span class="spec-tag">Distributed Systems Design</span><span class="spec-tag">API Contracts</span><span class="spec-tag">Microservices</span><span class="spec-tag">Cloud AWS GCP Azure</span><span class="spec-tag">Latency &amp; Scale SLOs</span><span class="spec-tag">CAP Theorem Applied</span></div>
       </div>
       <div class="spec-card">
         <div class="spec-top-bar" style="background:linear-gradient(90deg,#0D9488,transparent)"></div>
-        <div class="spec-rhombus">
-          <div class="spec-rhombus-bg" style="background:rgba(13,148,136,.15);border:1px solid rgba(13,148,136,.3)"></div>
-          <span class="spec-rhombus-num">3</span>
-        </div>
+        <div class="spec-rhombus"><div class="spec-rhombus-bg" style="background:rgba(13,148,136,.15);border:1px solid rgba(13,148,136,.3)"></div><span class="spec-rhombus-num">3</span></div>
         <h3 class="spec-card-title">AI &amp; Intelligent Platform Engineering</h3>
-        <p class="spec-card-body">I build AI systems that reach production and remain there — not prototypes. From agentic orchestration and multimodal RAG pipelines to evaluation-as-a-service and ML governance, I understand the complete engineering stack required to move a model from 45% accuracy to 90%+. The unglamorous work — grounding, feedback loops, versioning, policy enforcement — is precisely where I create the most durable competitive advantage.</p>
-        <div class="spec-tags">
-          <span class="spec-tag">Agentic Systems</span><span class="spec-tag">RAG &amp; LLM Integration</span>
-          <span class="spec-tag">AI Governance</span><span class="spec-tag">Evals &amp; MLOps</span>
-          <span class="spec-tag">Snowflake / Databricks</span><span class="spec-tag">Computer Vision</span>
-        </div>
+        <p class="spec-card-body">I build AI systems that reach production and remain there — not prototypes. From agentic orchestration and multimodal RAG pipelines to evaluation-as-a-service and ML governance, I understand the complete engineering stack required to move a model from 45% accuracy to 90%+.</p>
+        <div class="spec-tags"><span class="spec-tag">Agentic Systems</span><span class="spec-tag">RAG &amp; LLM Integration</span><span class="spec-tag">AI Governance</span><span class="spec-tag">Evals &amp; MLOps</span><span class="spec-tag">Snowflake / Databricks</span><span class="spec-tag">Computer Vision</span></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ═══════════════════════════════════════
-     SECTION 3 — CASE STUDIES
-     "Here is the proof" — accordion on warm bg
-     Tone: Evidence, specificity, outcomes
-════════════════════════════════════════ -->
 <section class="case-section" id="case-studies">
   <div class="container">
     <div class="sec-header">
-      <p class="sec-label" style="color:var(--accent)">Proof of Work</p>
+      <p class="sec-label">Proof of Work</p>
       <h2 class="sec-title">Three problems. Real outcomes.</h2>
       <p class="sec-sub">Not slide decks — shipped products with verifiable business impact. Click any case to see the problem, strategy, and metrics.</p>
     </div>
     <div class="case-grid">
-
       <div class="case-card" onclick="toggleCase(this)">
         <div class="case-header">
           <div class="case-header-left">
-            <p class="case-num">Case Study 01 · Procore Technologies</p>
+            <p class="case-num">Case Study 01 - Procore Technologies</p>
             <h3 class="case-title">Enterprise Agentic AI Platform — 45% to 90%+ Response Accuracy</h3>
             <div class="case-meta"><span class="case-badge blue">GenAI / Agentic</span><span class="case-badge green">Production</span><span class="case-badge amber">3,000+ Customers</span></div>
           </div>
@@ -491,7 +398,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <div class="case-body">
           <div>
             <p class="case-section-label">Problem</p>
-            <p class="case-section-text">Procore's AI assistant was returning ~45% accurate responses — hallucinating project data, surfacing wrong documents, and failing on multi-domain queries. Enterprise customers were churning on AI features before they could demonstrate ROI. The platform had no grounding strategy and no evaluation framework to measure or improve.</p>
+            <p class="case-section-text">Procore's AI assistant was returning approximately 45% accurate responses — hallucinating project data, surfacing wrong documents, and failing on multi-domain queries. Enterprise customers were churning on AI features before they could demonstrate ROI. The platform had no grounding strategy and no evaluation framework to measure or improve.</p>
           </div>
           <div>
             <p class="case-section-label">Strategy &amp; Execution</p>
@@ -510,17 +417,14 @@ footer p{font-size:12px;color:var(--ink-muted)}
           </div>
           <div class="case-stack">
             <p class="case-section-label">Tech Stack</p>
-            <div class="stack-pills">
-              <span class="stack-pill">GPT-4 / Claude / Gemini</span><span class="stack-pill">Elasticsearch</span><span class="stack-pill">Vector Embeddings</span><span class="stack-pill">MCP Protocol</span><span class="stack-pill">AWS / GCP / Azure</span><span class="stack-pill">RAG Pipelines</span><span class="stack-pill">YOLO + OCR + BERT</span>
-            </div>
+            <div class="stack-pills"><span class="stack-pill">GPT-4 / Claude / Gemini</span><span class="stack-pill">Elasticsearch</span><span class="stack-pill">Vector Embeddings</span><span class="stack-pill">MCP Protocol</span><span class="stack-pill">AWS / GCP / Azure</span><span class="stack-pill">RAG Pipelines</span><span class="stack-pill">YOLO + OCR + BERT</span></div>
           </div>
         </div>
       </div>
-
       <div class="case-card" onclick="toggleCase(this)">
         <div class="case-header">
           <div class="case-header-left">
-            <p class="case-num">Case Study 02 · Autodesk, Inc.</p>
+            <p class="case-num">Case Study 02 - Autodesk, Inc.</p>
             <h3 class="case-title">License-to-Subscription Platform Migration — $1B ARR</h3>
             <div class="case-meta"><span class="case-badge blue">Platform / API</span><span class="case-badge green">$1B ARR</span><span class="case-badge amber">Business Transformation</span></div>
           </div>
@@ -529,16 +433,16 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <div class="case-body">
           <div>
             <p class="case-section-label">Problem</p>
-            <p class="case-section-text">Autodesk was executing one of the most complex commercial transformations in enterprise software — moving from perpetual licenses to subscriptions. The existing infrastructure had no transactional API layer for subscription creation, entitlement management, or partner order placement at scale. Failure would mean broken revenue recognition and permanent customer trust damage.</p>
+            <p class="case-section-text">Autodesk was executing one of the most complex commercial transformations in enterprise software — moving from perpetual licenses to subscriptions. The existing infrastructure had no transactional API layer for subscription creation, entitlement management, or partner order placement at scale.</p>
           </div>
           <div>
             <p class="case-section-label">Strategy &amp; Execution</p>
             <ul class="case-exec-list">
               <li>Led design of transactional subscription APIs — GET/POST microservices for partner order placement, pricing, and product management.</li>
-              <li>Defined full API contracts: schema, entities, filtering/sorting, error handling, rate limits (&lt;250ms latency, 10K req/user).</li>
-              <li>Built order-to-subscription sync: .com → SAP (order creation) → Salesforce (subscription with entitlements and product line items).</li>
+              <li>Defined full API contracts: schema, entities, filtering/sorting, error handling, rate limits (under 250ms latency, 10K req/user).</li>
+              <li>Built order-to-subscription sync connecting .com to SAP (order creation) to Salesforce (subscription with entitlements).</li>
               <li>Delivered AI/ML churn and buying-readiness models contributing to 25% YoY revenue growth.</li>
-              <li>Architected NLP support bot (IBM Watson) resolving ~20K cases/month, saving $1M+ annually.</li>
+              <li>Architected NLP support bot (IBM Watson) resolving approximately 20K cases/month, saving $1M+ annually.</li>
             </ul>
           </div>
           <div class="case-impact">
@@ -548,18 +452,15 @@ footer p{font-size:12px;color:var(--ink-muted)}
           </div>
           <div class="case-stack">
             <p class="case-section-label">Tech Stack</p>
-            <div class="stack-pills">
-              <span class="stack-pill">REST APIs</span><span class="stack-pill">SAP OMS</span><span class="stack-pill">Salesforce CPQ</span><span class="stack-pill">Microservices</span><span class="stack-pill">IBM Watson NLP</span><span class="stack-pill">Snowflake</span><span class="stack-pill">Databricks</span>
-            </div>
+            <div class="stack-pills"><span class="stack-pill">REST APIs</span><span class="stack-pill">SAP OMS</span><span class="stack-pill">Salesforce CPQ</span><span class="stack-pill">Microservices</span><span class="stack-pill">IBM Watson NLP</span><span class="stack-pill">Snowflake</span><span class="stack-pill">Databricks</span></div>
           </div>
         </div>
       </div>
-
       <div class="case-card" onclick="toggleCase(this)">
         <div class="case-header">
           <div class="case-header-left">
-            <p class="case-num">Case Study 03 · Procore Technologies</p>
-            <h3 class="case-title">360° Executive Reporting — Near-Real-Time at Petabyte Scale</h3>
+            <p class="case-num">Case Study 03 - Procore Technologies</p>
+            <h3 class="case-title">360 Degree Executive Reporting — Near-Real-Time at Petabyte Scale</h3>
             <div class="case-meta"><span class="case-badge blue">Data Platform</span><span class="case-badge green">Distributed Systems</span><span class="case-badge amber">CAP Theorem Applied</span></div>
           </div>
           <div class="case-toggle">+</div>
@@ -567,36 +468,31 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <div class="case-body">
           <div>
             <p class="case-section-label">Problem</p>
-            <p class="case-section-text">Enterprise customers ($500M+ ARR accounts) were threatening non-renewal because cross-domain reporting did not exist. Data was fragmented across Financials, PMQS, and Resource Management. Full materialization guaranteed consistency but required 45 minutes — an eternity for executives making real-time project decisions. Customers needed data in under 5 minutes.</p>
+            <p class="case-section-text">Enterprise customers with over $500M ARR were threatening non-renewal because cross-domain reporting did not exist. Data was fragmented across Financials, PMQS, and Resource Management. Full materialization required 45 minutes — an eternity for executives making real-time project decisions.</p>
           </div>
           <div>
             <p class="case-section-label">Strategy &amp; Execution</p>
             <ul class="case-exec-list">
-              <li>Designed partition strategy: top 50 enterprise customers received dedicated high-volume partitions; remaining customers shared an optimised partition.</li>
-              <li>Introduced incremental materialisation — trading bounded staleness for 5-minute data availability with full consistency guaranteed within 10 minutes.</li>
-              <li>Audited and migrated DynamoDB → DocumentDB → native MongoDB, achieving &lt;250ms P99 SLO on complex nested aggregations.</li>
-              <li>Built cross-domain reporting models joining Financials, PMQS, and Resource Management into a unified 360° executive view.</li>
+              <li>Designed partition strategy: top 50 enterprise customers received dedicated high-volume partitions.</li>
+              <li>Introduced incremental materialisation — trading bounded staleness for 5-minute data availability.</li>
+              <li>Audited and migrated DynamoDB to DocumentDB to native MongoDB, achieving under 250ms P99 SLO.</li>
+              <li>Built cross-domain reporting models joining Financials, PMQS, and Resource Management into a unified executive view.</li>
             </ul>
           </div>
           <div class="case-impact">
             <div class="impact-item"><span class="impact-num">5 min</span><span class="impact-label">Near-real-time (from 45 min)</span></div>
-            <div class="impact-item"><span class="impact-num">&lt;250ms</span><span class="impact-label">P99 query latency</span></div>
+            <div class="impact-item"><span class="impact-num">250ms</span><span class="impact-label">P99 query latency</span></div>
             <div class="impact-item"><span class="impact-num">$300M+</span><span class="impact-label">Revenue protected via retention</span></div>
           </div>
           <div class="case-stack">
             <p class="case-section-label">Tech Stack</p>
-            <div class="stack-pills">
-              <span class="stack-pill">MongoDB</span><span class="stack-pill">DynamoDB</span><span class="stack-pill">DocumentDB</span><span class="stack-pill">Incremental Materialisation</span><span class="stack-pill">Partition Strategy</span><span class="stack-pill">Graph API</span><span class="stack-pill">Elasticsearch</span>
-            </div>
+            <div class="stack-pills"><span class="stack-pill">MongoDB</span><span class="stack-pill">DynamoDB</span><span class="stack-pill">DocumentDB</span><span class="stack-pill">Incremental Materialisation</span><span class="stack-pill">Partition Strategy</span><span class="stack-pill">Graph API</span><span class="stack-pill">Elasticsearch</span></div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
-<!-- EXPERIENCE -->
 <section class="timeline-section" id="experience">
   <div class="container">
     <div class="sec-header">
@@ -615,12 +511,11 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <div class="tl-right">
           <p class="tl-role">Principal Product &amp; Technology Leader — Data &amp; AI</p>
           <ul class="tl-bullets">
-            <li>Lifted AI response accuracy from ~45% to <strong>90%+</strong> via just-in-time grounding and schema-driven action layers.</li>
+            <li>Lifted AI response accuracy from approximately 45% to <strong>90%+</strong> via just-in-time grounding and schema-driven action layers.</li>
             <li>Shipped multimodal RAG platform adopted by <strong>3,000+ enterprise customers</strong> across text, document, and image workloads.</li>
             <li>Built supervisor orchestration layer with dynamic intent-routing to domain-specific agents at enterprise scale.</li>
             <li>Defined AI governance: agent registries, versioning, ML exclusions, hybrid-cloud compliance.</li>
-            <li>Led cross-functional teams — engineers, data scientists, platform leads — across multi-quarter roadmaps.</li>
-            <li>Drove engineering quality: API contracts, architecture reviews, NFR governance (latency, consistency, error handling).</li>
+            <li>Led cross-functional teams across multi-quarter roadmaps.</li>
           </ul>
         </div>
       </div>
@@ -635,10 +530,10 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <div class="tl-right">
           <p class="tl-role">Technical Product Manager — Data &amp; ML</p>
           <ul class="tl-bullets">
-            <li>Subscription APIs contributing to <strong>~$1B ARR</strong> in FY19 — the company's license-to-subscription pivot.</li>
-            <li>AI/ML churn and buying-readiness models driving <strong>~25% YoY revenue growth</strong>.</li>
+            <li>Subscription APIs contributing to <strong>approximately $1B ARR</strong> in FY19 — the company's license-to-subscription pivot.</li>
+            <li>AI/ML churn and buying-readiness models driving <strong>approximately 25% YoY revenue growth</strong>.</li>
             <li>Petabyte data platform: 5+ PB ingested across 10,000+ tables powering global analytics and ML.</li>
-            <li>NLP support bot (IBM Watson) resolving ~20K cases/month with $1M+ annual cost savings.</li>
+            <li>NLP support bot (IBM Watson) resolving approximately 20K cases/month with $1M+ annual cost savings.</li>
           </ul>
         </div>
       </div>
@@ -660,8 +555,6 @@ footer p{font-size:12px;color:var(--ink-muted)}
     </div>
   </div>
 </section>
-
-<!-- PHILOSOPHY -->
 <section class="philosophy-section" id="philosophy">
   <div class="container">
     <div class="phil-grid">
@@ -676,7 +569,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
           <div class="phil-point-accent" style="background:linear-gradient(180deg,#0F62FE,#60A5FA)"></div>
           <div class="phil-point-inner">
             <div class="phil-icon-wrap" style="background:rgba(15,98,254,.15);border:1px solid rgba(15,98,254,.2)">
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#60A5FA"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.93 4.93l1.41 1.41M13.66 13.66l1.41 1.41M4.93 15.07l1.41-1.41M13.66 6.34l1.41-1.41" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#60A5FA"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/></svg>
             </div>
             <div class="phil-point-text">
               <p class="phil-point-title">Outcomes over output</p>
@@ -688,7 +581,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
           <div class="phil-point-accent" style="background:linear-gradient(180deg,#7C3AED,#A78BFA)"></div>
           <div class="phil-point-inner">
             <div class="phil-icon-wrap" style="background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.2)">
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M6 8l-4 3 4 3" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 8l4 3-4 3" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 4l-4 12" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" opacity=".6"/></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M6 8l-4 3 4 3M14 8l4 3-4 3M12 4l-4 12" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <div class="phil-point-text">
               <p class="phil-point-title">Technical depth enables trust</p>
@@ -712,11 +605,11 @@ footer p{font-size:12px;color:var(--ink-muted)}
           <div class="phil-point-accent" style="background:linear-gradient(180deg,#D97706,#FCD34D)"></div>
           <div class="phil-point-inner">
             <div class="phil-icon-wrap" style="background:rgba(217,119,6,.15);border:1px solid rgba(217,119,6,.2)">
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3.5" stroke="#FCD34D" stroke-width="1.5"/><circle cx="3" cy="5" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="17" cy="5" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="3" cy="15" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="17" cy="15" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><path d="M4.5 6L7.5 8.5M12.5 8.5L15.5 6M4.5 14L7.5 11.5M12.5 11.5L15.5 14" stroke="#FCD34D" stroke-width="1" stroke-linecap="round" opacity=".5"/></svg>
+              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3.5" stroke="#FCD34D" stroke-width="1.5"/><circle cx="3" cy="5" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="17" cy="5" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="3" cy="15" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="17" cy="15" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/></svg>
             </div>
             <div class="phil-point-text">
               <p class="phil-point-title">AI is infrastructure, not magic</p>
-              <p class="phil-point-body">Great AI products need evaluation frameworks, feedback loops, and governance from day one. I've built the pipelines that turned 45% accuracy into 90%+ — the unglamorous work that makes AI reliable.</p>
+              <p class="phil-point-body">Great AI products need evaluation frameworks, feedback loops, and governance from day one. I built the pipelines that turned 45% accuracy into 90%+ — the unglamorous work that makes AI reliable.</p>
             </div>
           </div>
         </li>
@@ -724,47 +617,44 @@ footer p{font-size:12px;color:var(--ink-muted)}
     </div>
   </div>
 </section>
-
-<!-- CONTACT -->
 <section class="contact-section" id="contact">
   <div class="container">
     <div class="contact-grid">
       <div>
         <p class="sec-label">Contact</p>
         <h2 class="contact-title">Let's build something remarkable</h2>
-        <p class="contact-sub">Open to senior and principal product &amp; technology leadership roles, consulting engagements, and fractional CTO opportunities. Based in Plano, TX — available globally.</p>
+        <p class="contact-sub">Open to senior and principal product and technology leadership roles, consulting engagements, and fractional CTO opportunities. Based in Plano, TX — available globally.</p>
         <div class="contact-links">
-          <div class="contact-link" style="cursor:default"><div class="contact-link-icon">✉️</div><div><span class="contact-link-label">Email</span><span class="contact-link-val" style="user-select:all"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="483b20292a2d2d3a2b2b2b082f25292124662b2725">[email&#160;protected]</a></span></div></div>
+          <div class="contact-link" style="cursor:default">
+            <div class="contact-link-icon">✉️</div>
+            <div><span class="contact-link-label">Email — click to copy</span><span class="contact-link-val" id="emailAddr" style="user-select:all;cursor:text">shabeerccc@gmail.com</span></div>
+          </div>
           <a href="https://linkedin.com/in/mohamedshabeerusman" target="_blank" class="contact-link"><div class="contact-link-icon">💼</div><div><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">mohamedshabeerusman</span></div></a>
           <a href="https://github.com/shabeerccc" target="_blank" class="contact-link"><div class="contact-link-icon">⚡</div><div><span class="contact-link-label">GitHub</span><span class="contact-link-val">github.com/shabeerccc</span></div></a>
           <a href="tel:2245952177" class="contact-link"><div class="contact-link-icon">📞</div><div><span class="contact-link-label">Phone</span><span class="contact-link-val">224-595-2177</span></div></a>
         </div>
-        <p style="font-size:12px;color:var(--ink-muted);margin-top:12px;line-height:1.6">
-          Or copy email directly: <strong style="color:var(--ink);user-select:all"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="63100b020106061100000023040e020a0f4d000c0e">[email&#160;protected]</a></strong>
-        </p>
       </div>
       <div class="contact-cta-box">
         <div class="availability"><span class="avail-dot"></span>Currently available for new opportunities</div>
         <h3 class="cta-box-title">Ready to bring AI products from prototype to production?</h3>
-        <p class="cta-box-body">Whether you need a fractional CPO, a CTO partner, or someone to lead your AI platform from strategy to shipped — I've done it at enterprise scale and I can do it for you.</p>
-        <div class="cta-box-btn" style="cursor:default;opacity:.9">✉ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e5968d8487808097868686a58288848c89cb868a88">[email&#160;protected]</a></div>
-        <p style="font-size:12px;color:rgba(255,255,255,.55);margin-top:8px">👆 Copy this address and paste into your email app</p>
+        <p class="cta-box-body">Whether you need a fractional CPO, a CTO partner, or someone to lead your AI platform from strategy to shipped — I have done it at enterprise scale and I can do it for you.</p>
+        <div class="cta-email-display">
+          <span class="cta-email-addr" id="ctaEmail">shabeerccc@gmail.com</span>
+          <span class="cta-copy-hint">select &amp; copy</span>
+        </div>
         <p style="font-size:12px;color:rgba(255,255,255,.3);margin-top:4px">MBA · Keller Graduate School &nbsp;·&nbsp; BS EEE · Dr. MGR University</p>
       </div>
     </div>
   </div>
 </section>
-
 <footer>
-  <p>© 2026 Mohamed Shabeer Usman · Product & Technology Leader · shabeertech.com</p>
+  <p>2026 Mohamed Shabeer Usman · Product and Technology Leader · shabeertech.com</p>
 </footer>
-
 <a href="#contact" class="floating-cta" title="Let's Talk">
   <span class="floating-cta-dot"></span>
   <span class="fcta-text">Let's Talk</span>
 </a>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function toggleCase(el){
   try{
     var wasOpen=el.classList.contains('open');
@@ -793,4 +683,18 @@ document.addEventListener('DOMContentLoaded',function(){
       entries.forEach(function(e){
         if(e.isIntersecting){
           e.target.style.opacity='1';
-          e.target.style.tra
+          e.target.style.transform='translateY(0)';
+        }
+      });
+    },{threshold:0.07});
+    Array.from(document.querySelectorAll('.engage-card,.spec-card,.case-card,.phil-point,.tl-item,.contact-link')).forEach(function(el){
+      el.style.opacity='0';
+      el.style.transform='translateY(14px)';
+      el.style.transition='opacity .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1)';
+      obs.observe(el);
+    });
+  }catch(e){}
+});
+</script>
+</body>
+</html>
