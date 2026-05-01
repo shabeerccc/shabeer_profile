@@ -25,7 +25,7 @@
   --accent:#0F62FE;--accent-soft:#EFF4FF;--accent-mid:#BFCFFE;
   --green:#059669;--green-soft:#ECFDF5;--amber:#D97706;--amber-soft:#FFFBEB;
   --serif:'Instrument Serif',Georgia,serif;
-  --sans:'Geist','Helvetica Neue',sans-serif;
+  --sans:'Geist','Helvetica Neue',Arial,sans-serif;
   --max:1160px;--r:10px;--r-lg:16px;
   --shadow-md:0 4px 16px rgba(0,0,0,.08),0 1px 4px rgba(0,0,0,.04);
   --shadow-lg:0 8px 32px rgba(0,0,0,.1),0 2px 8px rgba(0,0,0,.06);
@@ -63,9 +63,10 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .hero-meta-sep{width:3px;height:3px;border-radius:50%;background:var(--border-strong)}
 .hero-sub{font-size:16px;font-weight:300;color:var(--ink-mid);line-height:1.8;margin-bottom:28px;max-width:520px}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--surface);font-size:14px;font-weight:500;padding:11px 22px;border-radius:8px;text-decoration:none;border:1px solid var(--ink);transition:all .2s}
+.btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;padding:11px 22px;border-radius:8px;text-decoration:none;transition:all .2s}
+.btn-primary{background:var(--ink);color:var(--surface);border:1px solid var(--ink)}
 .btn-primary:hover{background:var(--accent);border-color:var(--accent)}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:var(--surface);color:var(--ink);font-size:14px;font-weight:500;padding:11px 22px;border-radius:8px;text-decoration:none;border:1px solid var(--border-strong);transition:all .2s}
+.btn-secondary{background:var(--surface);color:var(--ink);border:1px solid var(--border-strong)}
 .btn-secondary:hover{border-color:var(--ink);background:var(--surface-2)}
 .hero-stats{display:flex;gap:28px;margin-top:40px;padding-top:28px;border-top:1px solid var(--border);flex-wrap:wrap}
 .stat-num{font-family:var(--serif);font-size:1.9rem;color:var(--ink);display:block;line-height:1;margin-bottom:4px}
@@ -115,7 +116,7 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .case-section{background:#F8F7F4}
 .sec-label{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
 .sec-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);color:var(--ink);line-height:1.15;letter-spacing:-.02em;margin-bottom:12px}
-.sec-sub{font-size:16px;font-weight:300;color:var(--ink-mid);max-width:560px;line-height:1.75}
+.sec-sub{font-size:16px;font-weight:300;color:var(--ink-mid);max-width:620px;line-height:1.75}
 .sec-header{margin-bottom:48px}
 .case-grid{display:flex;flex-direction:column;gap:12px}
 .case-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 36px;cursor:pointer;position:relative;overflow:hidden;transition:border-color .2s,box-shadow .2s}
@@ -136,6 +137,7 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .case-card.open .case-toggle{background:var(--accent);border-color:var(--accent);color:#fff;transform:rotate(45deg)}
 .case-body{display:none;margin-top:28px;padding-top:28px;border-top:1px solid var(--border)}
 .case-card.open .case-body{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.case-wide{grid-column:1/-1}
 .case-section-label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:8px}
 .case-section-text{font-size:14px;font-weight:300;color:var(--ink-mid);line-height:1.75}
 .case-exec-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
@@ -145,7 +147,7 @@ h1.hero-title em{font-style:italic;color:var(--accent)}
 .impact-item{text-align:center}
 .impact-num{font-family:var(--serif);font-size:2rem;color:var(--accent);display:block;line-height:1;margin-bottom:4px}
 .impact-label{font-size:11px;color:var(--ink-muted)}
-.case-stack{grid-column:1/-1}
+.case-stack,.stack-wrap{grid-column:1/-1}
 .stack-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .stack-pill{font-size:11px;font-weight:500;color:var(--ink-mid);background:var(--surface);border:1px solid var(--border);padding:4px 10px;border-radius:5px;font-family:monospace}
 .timeline-section{background:#F8F7F4;border-top:1px solid var(--border)}
@@ -349,31 +351,31 @@ footer p{font-size:12px;color:var(--ink-muted)}
     <div class="spec-header">
       <div>
         <p class="spec-header-label">Core Specialization</p>
-        <h2 class="spec-header-title">Where I build<br><em>transformative</em> platforms</h2>
+        <h2 class="spec-header-title">From Product Vision<br>to <em>Platform Scale</em></h2>
       </div>
-      <p class="spec-header-sub">Three interlocking disciplines built over 14 years across Procore and Autodesk — each one independently valuable, together they define a leader who can take a platform from vision to enterprise scale.</p>
+      <p class="spec-header-sub">Three leadership disciplines I bring to every platform: identifying the right product bet, shaping the technical strategy, and turning complex systems into measurable business outcomes.</p>
     </div>
     <div class="spec-grid">
       <div class="spec-card">
         <div class="spec-top-bar" style="background:linear-gradient(90deg,#0F62FE,transparent)"></div>
         <div class="spec-rhombus"><div class="spec-rhombus-bg" style="background:rgba(15,98,254,.15);border:1px solid rgba(15,98,254,.3)"></div><span class="spec-rhombus-num">1</span></div>
-        <h3 class="spec-card-title">Enterprise SaaS &amp; Platform Strategy</h3>
-        <p class="spec-card-body">I design and scale multi-tenant SaaS platforms that serve thousands of enterprise customers without compromising reliability, compliance, or margin. From 0 to 1 product strategy through platform maturity, I own the roadmap, align executive stakeholders, and lead cross-functional teams to ship products that generate measurable revenue and long-term retention.</p>
-        <div class="spec-tags"><span class="spec-tag">Multi-tenant Architecture</span><span class="spec-tag">0-1 Product Strategy</span><span class="spec-tag">Enterprise GTM</span><span class="spec-tag">Roadmap &amp; Execution</span><span class="spec-tag">Stakeholder Alignment</span><span class="spec-tag">SaaS Retention Metrics</span></div>
+        <h3 class="spec-card-title">Product Vision &amp; Platform Strategy</h3>
+        <p class="spec-card-body">I define product vision for complex enterprise platforms, translate ambiguous customer pain into clear strategy, and align executives, engineering, GTM, and customer teams around measurable outcomes. My strength is turning early signals into platform bets that create retention, revenue, and operational leverage.</p>
+        <div class="spec-tags"><span class="spec-tag">Product Vision</span><span class="spec-tag">0-1 Strategy</span><span class="spec-tag">Platform Roadmaps</span><span class="spec-tag">Executive Alignment</span><span class="spec-tag">Customer Discovery</span><span class="spec-tag">Business Outcomes</span></div>
       </div>
       <div class="spec-card">
         <div class="spec-top-bar" style="background:linear-gradient(90deg,#7C3AED,transparent)"></div>
         <div class="spec-rhombus"><div class="spec-rhombus-bg" style="background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.3)"></div><span class="spec-rhombus-num">2</span></div>
-        <h3 class="spec-card-title">Distributed Systems &amp; Technical Architecture</h3>
-        <p class="spec-card-body">I lead the design of distributed systems engineered for petabyte-scale data ingestion, sub-250ms latency SLOs, and enterprise-grade fault tolerance. Operating at the intersection of product and engineering, I define API contracts, govern non-functional requirements, and make the infrastructure tradeoff decisions that determine whether a platform holds up under production load.</p>
-        <div class="spec-tags"><span class="spec-tag">Distributed Systems Design</span><span class="spec-tag">API Contracts</span><span class="spec-tag">Microservices</span><span class="spec-tag">Cloud AWS GCP Azure</span><span class="spec-tag">Latency &amp; Scale SLOs</span><span class="spec-tag">CAP Theorem Applied</span></div>
+        <h3 class="spec-card-title">Scalable SaaS &amp; Distributed Architecture</h3>
+        <p class="spec-card-body">I lead platform strategy for multi-tenant SaaS systems where scale, reliability, latency, compliance, and cost are product requirements. I work deeply with engineering on architecture decisions, API contracts, event-driven systems, data models, observability, throttling, and rollout strategy so platforms scale safely for enterprise customers.</p>
+        <div class="spec-tags"><span class="spec-tag">Multi-Tenant SaaS</span><span class="spec-tag">Distributed Systems</span><span class="spec-tag">Event-Driven Architecture</span><span class="spec-tag">APIs</span><span class="spec-tag">Reliability</span><span class="spec-tag">Operational Scale</span></div>
       </div>
       <div class="spec-card">
         <div class="spec-top-bar" style="background:linear-gradient(90deg,#0D9488,transparent)"></div>
         <div class="spec-rhombus"><div class="spec-rhombus-bg" style="background:rgba(13,148,136,.15);border:1px solid rgba(13,148,136,.3)"></div><span class="spec-rhombus-num">3</span></div>
-        <h3 class="spec-card-title">AI &amp; Intelligent Platform Engineering</h3>
-        <p class="spec-card-body">I build AI systems that reach production and remain there — not prototypes. From agentic orchestration and multimodal RAG pipelines to evaluation-as-a-service and ML governance, I understand the complete engineering stack required to move a model from 45% accuracy to 90%+.</p>
-        <div class="spec-tags"><span class="spec-tag">Agentic Systems</span><span class="spec-tag">RAG &amp; LLM Integration</span><span class="spec-tag">AI Governance</span><span class="spec-tag">Evals &amp; MLOps</span><span class="spec-tag">Snowflake / Databricks</span><span class="spec-tag">Computer Vision</span></div>
+        <h3 class="spec-card-title">AI &amp; Data Product Innovation</h3>
+        <p class="spec-card-body">I build AI and data products that move from prototype to trusted enterprise workflow. That means defining use cases, data foundations, evaluation loops, governance, observability, and adoption metrics so AI becomes a reliable product capability, not a demo.</p>
+        <div class="spec-tags"><span class="spec-tag">Agentic AI</span><span class="spec-tag">Data Products</span><span class="spec-tag">Evaluation Frameworks</span><span class="spec-tag">AI Governance</span><span class="spec-tag">RAG</span><span class="spec-tag">Enterprise Adoption</span></div>
       </div>
     </div>
   </div>
@@ -382,112 +384,84 @@ footer p{font-size:12px;color:var(--ink-muted)}
   <div class="container">
     <div class="sec-header">
       <p class="sec-label">Proof of Work</p>
-      <h2 class="sec-title">Three problems. Real outcomes.</h2>
-      <p class="sec-sub">Not slide decks — shipped products with verifiable business impact. Click any case to see the problem, strategy, and metrics.</p>
+      <h2 class="sec-title">Four case studies. Interview-ready format.</h2>
+      <p class="sec-sub">Each post follows the same structure: Problem, What you built, Architecture / product thinking, Results / metrics, and Lessons learned.</p>
     </div>
     <div class="case-grid">
       <div class="case-card" onclick="toggleCase(this)">
         <div class="case-header">
           <div class="case-header-left">
-            <p class="case-num">Case Study 01 - Procore Technologies</p>
-            <h3 class="case-title">Enterprise Agentic AI Platform — 45% to 90%+ Response Accuracy</h3>
+            <p class="case-num">Case Study 01 - Procore / Autodesk Interview Project</p>
+            <h3 class="case-title">BIM and Drawing Intelligence - Extracting Key Entities from 2D/3D Models for Progress Tracking</h3>
+            <div class="case-meta"><span class="case-badge blue">BIM / Drawings</span><span class="case-badge green">IFC + Revit</span><span class="case-badge amber">Location Graph</span></div>
+          </div>
+          <div class="case-toggle">+</div>
+        </div>
+        <div class="case-body">
+          <div><p class="case-section-label">Problem</p><p class="case-section-text">Construction teams had BIM models, 2D drawings, schedules, daily logs, RFIs, and project tasks, but they were not connected into a single execution view. IFC/Revit models contained rich element data, but it was locked inside schema-heavy formats. Drawings contained callouts, room tags, title block data, and symbols, but those signals were mostly unstructured. Without a normalized location hierarchy, Procore progress tracking still depended on manual updates and spreadsheet reconciliation.</p></div>
+          <div><p class="case-section-label">What you built</p><ul class="case-exec-list"><li>Built a BIM-powered, location-aware construction intelligence platform that turns Revit, IFC, and 2D drawings into structured graph entities.</li><li>Extracted BIM elements such as walls, beams, columns, slabs, doors, equipment, levels, rooms, zones, coordinates, bounding boxes, materials, phases, and custom properties.</li><li>Extracted drawing entities from 2D PDFs using OCR for title blocks and annotations, symbol detection for plan objects, and NLP/NER for sheet metadata and location references.</li><li>Linked BIM elements and drawing references to Procore activities, schedule tasks, RFIs, submittals, daily logs, and progress states.</li></ul></div>
+          <div class="case-wide"><p class="case-section-label">Architecture / product thinking</p><p class="case-section-text">The extraction pipeline used source-specific adapters and a canonical schema. IFC files were parsed with IfcOpenShell, walking the containment hierarchy from project to site, building, storey, space, and element. Revit models used Autodesk APS/Forge Model Derivative APIs, Revit APIs, or Dynamo exports to pull element IDs, categories, parameters, levels, rooms, and geometry. Bounding boxes came from geometry math over model vertices, not computer vision. Computer vision was only needed for as-built photos, scanned drawings, or point clouds. A normalization layer mapped IFC GlobalId and Revit UniqueId into a stable element identity, added a fingerprint fallback using geometry hash, level, type, and bounding box, and normalized inconsistent level names such as L01, Level 1, and 1F. The spatial graph used Project, Building, Level, Zone, and Room nodes, with BIM elements attached to locations and construction activities through Location-Object-Task relationships.</p></div>
+          <div class="case-impact"><div class="impact-item"><span class="impact-num">2D/3D</span><span class="impact-label">Drawings plus BIM models unified</span></div><div class="impact-item"><span class="impact-num">No CV</span><span class="impact-label">Needed for BIM geometry extraction</span></div><div class="impact-item"><span class="impact-num">Graph</span><span class="impact-label">Project to room progress visibility</span></div></div>
+          <div><p class="case-section-label">Results / metrics</p><ul class="case-exec-list"><li>Created a single source of truth for location-aware progress tracking across model elements, drawings, and Procore field activity.</li><li>Enabled queries such as "show unfinished walls on Level 3, Zone B that are blocked by open RFIs" without manual spreadsheet joins.</li><li>Reduced manual mapping effort by using extracted metadata, spatial hierarchy, and fallback zone derivation from grids or bounding box overlap.</li></ul></div>
+          <div><p class="case-section-label">Lessons learned</p><ul class="case-exec-list"><li>GUIDs can drift across Revit re-exports, so element identity needs both source IDs and a geometry fingerprint fallback.</li><li>Coordinate systems must be versioned and validated because survey point or project base point changes can silently shift every bounding box.</li><li>Zones are often not modeled explicitly, so the platform needs a confidence-based fallback chain: IfcZone, Revit room, grid cell, then polygon or bounding box overlap.</li><li>The product value is not extraction alone. The value comes from tying BIM, drawings, schedules, and Procore field signals into a decision graph for progress and risk visibility.</li></ul></div>
+          <div class="case-wide"><p class="case-section-label">Tech Stack</p><div class="stack-pills"><span class="stack-pill">IfcOpenShell</span><span class="stack-pill">Autodesk APS / Forge</span><span class="stack-pill">Revit API</span><span class="stack-pill">Dynamo</span><span class="stack-pill">OCR</span><span class="stack-pill">YOLO</span><span class="stack-pill">BERT NER</span><span class="stack-pill">Knowledge Graph</span><span class="stack-pill">Procore APIs</span></div></div>
+        </div>
+      </div>
+      <div class="case-card" onclick="toggleCase(this)">
+        <div class="case-header">
+          <div class="case-header-left">
+            <p class="case-num">Case Study 02 - Procore Technologies</p>
+            <h3 class="case-title">Enterprise Agentic AI Platform — Scaling Accuracy from 45% to 90%+</h3>
             <div class="case-meta"><span class="case-badge blue">GenAI / Agentic</span><span class="case-badge green">Production</span><span class="case-badge amber">3,000+ Customers</span></div>
           </div>
           <div class="case-toggle">+</div>
         </div>
         <div class="case-body">
-          <div>
-            <p class="case-section-label">Problem</p>
-            <p class="case-section-text">Procore's AI assistant was returning approximately 45% accurate responses — hallucinating project data, surfacing wrong documents, and failing on multi-domain queries. Enterprise customers were churning on AI features before they could demonstrate ROI. The platform had no grounding strategy and no evaluation framework to measure or improve.</p>
-          </div>
-          <div>
-            <p class="case-section-label">Strategy &amp; Execution</p>
-            <ul class="case-exec-list">
-              <li>Designed supervisor orchestration layer with intent-routing to domain-specific agents via real-time manifest resolution.</li>
-              <li>Built just-in-time grounding workflows with schema-driven action layers to eliminate hallucinations.</li>
-              <li>Established Evaluation-as-a-Service with transaction-level metrics: correctness, recall, and completeness.</li>
-              <li>Shipped multimodal RAG pipelines supporting text, document, and image intelligence across all enterprise tiers.</li>
-              <li>Defined AI governance: agent registries, versioning, ML exclusions, and hybrid-cloud compliance across AWS, GCP, Azure.</li>
-            </ul>
-          </div>
-          <div class="case-impact">
-            <div class="impact-item"><span class="impact-num">90%+</span><span class="impact-label">Response accuracy (from 45%)</span></div>
-            <div class="impact-item"><span class="impact-num">3,000+</span><span class="impact-label">Enterprise customers on platform</span></div>
-            <div class="impact-item"><span class="impact-num">80%</span><span class="impact-label">User productivity improvement</span></div>
-          </div>
-          <div class="case-stack">
-            <p class="case-section-label">Tech Stack</p>
-            <div class="stack-pills"><span class="stack-pill">GPT-4 / Claude / Gemini</span><span class="stack-pill">Elasticsearch</span><span class="stack-pill">Vector Embeddings</span><span class="stack-pill">MCP Protocol</span><span class="stack-pill">AWS / GCP / Azure</span><span class="stack-pill">RAG Pipelines</span><span class="stack-pill">YOLO + OCR + BERT</span></div>
-          </div>
+          <div><p class="case-section-label">Problem</p><p class="case-section-text">At Procore, project teams were overwhelmed by fragmented data spread across RFIs, drawings, schedules, BIM models, cost systems, inspections, and emails. Users wanted simple answers such as which subcontractor was delaying MEP work or what RFIs were blocking a concrete pour. Traditional dashboards required manual investigation, while early GenAI copilots delivered only about 45% accuracy because they lacked construction context, retrieved the wrong information, and frequently hallucinated. The result was low trust and limited adoption in real project workflows.</p></div>
+          <div><p class="case-section-label">What you built</p><ul class="case-exec-list"><li><strong>Feature Agents:</strong> introduced domain-specialized agents for schedules, documents, BIM, cost, inspections, and daily logs. Each agent understood its workflow, source systems, permissions, and business logic.</li><li><strong>Custom Agents:</strong> launched customer- and role-specific agents for executive portfolio risk summaries, superintendent daily blocker insights, and workflows aligned to customer terminology and KPIs.</li><li><strong>Manifest Agents:</strong> built the governance layer defining each agent's capabilities, tools, data access, expected outputs, schemas, and permission boundaries.</li></ul></div>
+          <div class="case-wide"><p class="case-section-label">Architecture / product thinking</p><p class="case-section-text">The experience stayed simple: a user asked a construction question, the system identified intent, resolved the right agent manifest, routed the request to the best domain agent, and coordinated a grounded answer. Underneath, I built a strong Data Agent foundation that unified fragmented project records, linked drawings to RFIs and schedules, normalized project entities, and enforced data freshness. I paired this with continuous evaluations for factual accuracy, retrieval quality, latency, groundedness, and user satisfaction. Observability dashboards tracked hallucinations, failed retrievals, token cost, stale data usage, and confidence drift in production, allowing the team to improve the platform week over week.</p></div>
+          <div class="case-impact"><div class="impact-item"><span class="impact-num">90%+</span><span class="impact-label">Answer quality from 45%</span></div><div class="impact-item"><span class="impact-num">3x</span><span class="impact-label">User adoption after trust signals</span></div><div class="impact-item"><span class="impact-num">5-7 hrs</span><span class="impact-label">Saved weekly per project manager</span></div></div>
+          <div><p class="case-section-label">Results / metrics</p><ul class="case-exec-list"><li>Improved answer quality from 45% to 90%+ within two quarters.</li><li>Reduced hallucinations by more than 60% and doubled retrieval precision.</li><li>Improved response times by 35% through smarter routing and agent specialization.</li><li>Reduced token costs by 28% through routing optimization, prompt compression, and caching.</li><li>Moved AI from pilot experiments into daily construction execution.</li></ul></div>
+          <div><p class="case-section-label">Lessons learned</p><ul class="case-exec-list"><li>Strong data matters more than clever prompting.</li><li>Specialized agents outperform a single large assistant for complex construction workflows.</li><li>Governance through manifests is essential for enterprise trust, security, and scale.</li><li>Evaluations and observability turn AI from a demo into a measurable, continuously improving product.</li></ul></div>
+          <div class="case-wide"><p class="case-section-label">Tech Stack</p><div class="stack-pills"><span class="stack-pill">Feature Agents</span><span class="stack-pill">Custom Agents</span><span class="stack-pill">Manifest Agents</span><span class="stack-pill">Data Agent</span><span class="stack-pill">RAG Pipelines</span><span class="stack-pill">Vector + Graph Indexes</span><span class="stack-pill">Evaluation-as-a-Service</span><span class="stack-pill">Observability</span></div></div>
         </div>
       </div>
       <div class="case-card" onclick="toggleCase(this)">
         <div class="case-header">
           <div class="case-header-left">
-            <p class="case-num">Case Study 02 - Autodesk, Inc.</p>
-            <h3 class="case-title">License-to-Subscription Platform Migration — $1B ARR</h3>
-            <div class="case-meta"><span class="case-badge blue">Platform / API</span><span class="case-badge green">$1B ARR</span><span class="case-badge amber">Business Transformation</span></div>
+            <p class="case-num">Case Study 03 - Autodesk + Procore</p>
+            <h3 class="case-title">Building Multi-Tenant SaaS Platforms with Event-Driven Distributed Architecture</h3>
+            <div class="case-meta"><span class="case-badge blue">Multi-Tenant SaaS</span><span class="case-badge green">Event-Driven</span><span class="case-badge amber">Mongo / Distributed Systems</span></div>
           </div>
           <div class="case-toggle">+</div>
         </div>
         <div class="case-body">
-          <div>
-            <p class="case-section-label">Problem</p>
-            <p class="case-section-text">Autodesk was executing one of the most complex commercial transformations in enterprise software — moving from perpetual licenses to subscriptions. The existing infrastructure had no transactional API layer for subscription creation, entitlement management, or partner order placement at scale.</p>
-          </div>
-          <div>
-            <p class="case-section-label">Strategy &amp; Execution</p>
-            <ul class="case-exec-list">
-              <li>Led design of transactional subscription APIs — GET/POST microservices for partner order placement, pricing, and product management.</li>
-              <li>Defined full API contracts: schema, entities, filtering/sorting, error handling, rate limits (under 250ms latency, 10K req/user).</li>
-              <li>Built order-to-subscription sync connecting .com to SAP (order creation) to Salesforce (subscription with entitlements).</li>
-              <li>Delivered AI/ML churn and buying-readiness models contributing to 25% YoY revenue growth.</li>
-              <li>Architected NLP support bot (IBM Watson) resolving approximately 20K cases/month, saving $1M+ annually.</li>
-            </ul>
-          </div>
-          <div class="case-impact">
-            <div class="impact-item"><span class="impact-num">$1B</span><span class="impact-label">ARR contribution FY19</span></div>
-            <div class="impact-item"><span class="impact-num">25%</span><span class="impact-label">YoY revenue growth via ML</span></div>
-            <div class="impact-item"><span class="impact-num">$1M+</span><span class="impact-label">Annual savings via NLP bot</span></div>
-          </div>
-          <div class="case-stack">
-            <p class="case-section-label">Tech Stack</p>
-            <div class="stack-pills"><span class="stack-pill">REST APIs</span><span class="stack-pill">SAP OMS</span><span class="stack-pill">Salesforce CPQ</span><span class="stack-pill">Microservices</span><span class="stack-pill">IBM Watson NLP</span><span class="stack-pill">Snowflake</span><span class="stack-pill">Databricks</span></div>
-          </div>
+          <div><p class="case-section-label">Problem</p><p class="case-section-text">Enterprise SaaS platforms at Autodesk and Procore needed to support high-volume transactional and operational workloads across thousands of customers, regions, and downstream systems. At Autodesk, the challenge was subscription commerce: orders, pricing, entitlements, renewals, partner channels, SAP, and Salesforce synchronization. At Procore, the challenge was operational intelligence: project health, regional rollups, financial risk, RFIs, daily logs, schedules, and nested 360-degree company and project profiles. Both problems shared the same platform question: how do you build a multi-tenant SaaS architecture that scales predictably, keeps data fresh, supports downstream use cases, and remains performant under peak load?</p></div>
+          <div><p class="case-section-label">What you built</p><ul class="case-exec-list"><li>Designed transactional subscription APIs for Autodesk.com and partner channels to create orders, validate pricing, manage products, and trigger subscription entitlements at scale.</li><li>Built event-driven integration flows connecting customer and partner actions to SAP order management, Salesforce subscription records, entitlement systems, and downstream analytics.</li><li>Built a 360-degree project and company profile platform at Procore that aggregated operational metrics across RFIs, Daily Logs, Financials, PMQS, and Preconstruction.</li><li>Evolved the data architecture from DynamoDB key-value metrics to DocumentDB and MongoDB-style document aggregation for nested JSON workloads requiring low-latency rollups.</li></ul></div>
+          <div class="case-wide"><p class="case-section-label">Architecture / product thinking</p><p class="case-section-text">The architecture combined transactional and operational patterns. For transactional SaaS workflows, the flow was Customer or Partner Action → API Layer → Event Emission → SAP / Salesforce / Entitlements → Downstream Analytics. Every major CRUD operation needed reliable event emission so downstream systems could react to entitlement creation, subscription updates, renewal changes, account changes, and order lifecycle events. For operational intelligence, the flow was Product Tools → Event Streams → Metric Computation → 360 Profile Store → Mongo-style Aggregation → Executive Dashboard. The 360 profile stored project- and company-level metrics as nested documents, which matched the natural hierarchy of construction data: company, region, country, project, tool, risk area, and metric.</p></div>
+          <div class="case-impact"><div class="impact-item"><span class="impact-num">$1B</span><span class="impact-label">ARR supported via SaaS transformation</span></div><div class="impact-item"><span class="impact-num">250ms</span><span class="impact-label">Target latency for executive dashboards</span></div><div class="impact-item"><span class="impact-num">360°</span><span class="impact-label">Project and company intelligence profile</span></div></div>
+          <div><p class="case-section-label">Results / metrics</p><ul class="case-exec-list"><li>Supported Autodesk's subscription platform transformation contributing to approximately $1B ARR.</li><li>Enabled scalable partner order placement, subscription lifecycle changes, and entitlement synchronization across commerce, ERP, and CRM systems.</li><li>Supported executive dashboards with a target latency under 250ms for project, company, country, and region-level rollups.</li><li>Improved the foundation for downstream analytics, ML, alerts, and customer-facing operational insights.</li></ul></div>
+          <div><p class="case-section-label">Lessons learned</p><ul class="case-exec-list"><li>A database choice is a product decision when latency and customer trust are part of the value proposition.</li><li>DynamoDB works well for simple key-value access, but rich runtime aggregations over nested operational profiles need stronger document-query patterns.</li><li>Multi-tenancy requires product-level policies for isolation, throttling, fairness, observability, and geo-aware compliance.</li><li>Event-driven architecture is essential when every operational change must power downstream analytics, alerts, ML, and customer workflows.</li></ul></div>
+          <div class="case-wide"><p class="case-section-label">Tech Stack</p><div class="stack-pills"><span class="stack-pill">MongoDB</span><span class="stack-pill">DynamoDB</span><span class="stack-pill">DocumentDB</span><span class="stack-pill">Event Streams</span><span class="stack-pill">REST APIs</span><span class="stack-pill">Microservices</span><span class="stack-pill">SAP OMS</span><span class="stack-pill">Salesforce CPQ</span><span class="stack-pill">Sharding</span><span class="stack-pill">Autoscaling</span><span class="stack-pill">Throttling</span></div></div>
         </div>
       </div>
       <div class="case-card" onclick="toggleCase(this)">
         <div class="case-header">
           <div class="case-header-left">
-            <p class="case-num">Case Study 03 - Procore Technologies</p>
-            <h3 class="case-title">360 Degree Executive Reporting — Near-Real-Time at Petabyte Scale</h3>
+            <p class="case-num">Case Study 04 - Procore Technologies</p>
+            <h3 class="case-title">360 Degree Executive Reporting - Near-Real-Time at Petabyte Scale</h3>
             <div class="case-meta"><span class="case-badge blue">Data Platform</span><span class="case-badge green">Distributed Systems</span><span class="case-badge amber">CAP Theorem Applied</span></div>
           </div>
           <div class="case-toggle">+</div>
         </div>
         <div class="case-body">
-          <div>
-            <p class="case-section-label">Problem</p>
-            <p class="case-section-text">Enterprise customers with over $500M ARR were threatening non-renewal because cross-domain reporting did not exist. Data was fragmented across Financials, PMQS, and Resource Management. Full materialization required 45 minutes — an eternity for executives making real-time project decisions.</p>
-          </div>
-          <div>
-            <p class="case-section-label">Strategy &amp; Execution</p>
-            <ul class="case-exec-list">
-              <li>Designed partition strategy: top 50 enterprise customers received dedicated high-volume partitions.</li>
-              <li>Introduced incremental materialisation — trading bounded staleness for 5-minute data availability.</li>
-              <li>Audited and migrated DynamoDB to DocumentDB to native MongoDB, achieving under 250ms P99 SLO.</li>
-              <li>Built cross-domain reporting models joining Financials, PMQS, and Resource Management into a unified executive view.</li>
-            </ul>
-          </div>
-          <div class="case-impact">
-            <div class="impact-item"><span class="impact-num">5 min</span><span class="impact-label">Near-real-time (from 45 min)</span></div>
-            <div class="impact-item"><span class="impact-num">250ms</span><span class="impact-label">P99 query latency</span></div>
-            <div class="impact-item"><span class="impact-num">$300M+</span><span class="impact-label">Revenue protected via retention</span></div>
-          </div>
-          <div class="case-stack">
-            <p class="case-section-label">Tech Stack</p>
-            <div class="stack-pills"><span class="stack-pill">MongoDB</span><span class="stack-pill">DynamoDB</span><span class="stack-pill">DocumentDB</span><span class="stack-pill">Incremental Materialisation</span><span class="stack-pill">Partition Strategy</span><span class="stack-pill">Graph API</span><span class="stack-pill">Elasticsearch</span></div>
-          </div>
+          <div><p class="case-section-label">Problem</p><p class="case-section-text">Enterprise customers with over $500M ARR were threatening non-renewal because cross-domain reporting did not exist. Financials, PMQS, and Resource Management data were fragmented, and full materialization required approximately 45 minutes.</p></div>
+          <div><p class="case-section-label">What you built</p><ul class="case-exec-list"><li>Built a cross-domain executive reporting layer across major Procore product lines.</li><li>Introduced customer-aware partitioning for the top enterprise accounts.</li><li>Migrated data access patterns from DynamoDB to DocumentDB to native MongoDB where needed.</li></ul></div>
+          <div class="case-wide"><p class="case-section-label">Architecture / product thinking</p><p class="case-section-text">The design accepted bounded staleness to improve decision speed. Instead of full rematerialization, the system used incremental materialization and high-volume partitions so executives could access near-real-time views while the platform maintained predictable latency and reliability.</p></div>
+          <div class="case-impact"><div class="impact-item"><span class="impact-num">5 min</span><span class="impact-label">Near-real-time from 45 min</span></div><div class="impact-item"><span class="impact-num">250ms</span><span class="impact-label">P99 query latency</span></div><div class="impact-item"><span class="impact-num">$300M+</span><span class="impact-label">Revenue protected via retention</span></div></div>
+          <div><p class="case-section-label">Results / metrics</p><ul class="case-exec-list"><li>Reduced executive reporting freshness from approximately 45 minutes to 5 minutes.</li><li>Achieved under 250ms P99 query latency for critical reporting paths.</li><li>Protected high-value renewals by giving customers reliable portfolio visibility.</li></ul></div>
+          <div><p class="case-section-label">Lessons learned</p><p class="case-section-text">For executive workflows, perfect freshness is not always the right goal. The better product decision was a clear consistency tradeoff: bounded staleness, predictable latency, and trustworthy metrics.</p></div>
+          <div class="case-wide"><p class="case-section-label">Tech Stack</p><div class="stack-pills"><span class="stack-pill">MongoDB</span><span class="stack-pill">DynamoDB</span><span class="stack-pill">DocumentDB</span><span class="stack-pill">Incremental Materialization</span><span class="stack-pill">Partition Strategy</span><span class="stack-pill">Graph API</span><span class="stack-pill">Elasticsearch</span></div></div>
         </div>
       </div>
     </div>
@@ -497,60 +471,29 @@ footer p{font-size:12px;color:var(--ink-muted)}
   <div class="container">
     <div class="sec-header">
       <p class="sec-label">Experience</p>
-      <h2 class="sec-title">Where I've built</h2>
+      <h2 class="sec-title">Enterprise Platforms Built at Scale</h2>
     </div>
     <div class="timeline">
       <div class="tl-item">
         <div class="tl-header">
           <div class="tl-logo" style="background:#F97316"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h10a4 4 0 010 8H4V6z" fill="white" opacity=".9"/><path d="M4 14h6v4H4v-4z" fill="white" opacity=".6"/></svg></div>
-          <div class="tl-header-info">
-            <p class="tl-company">Procore Technologies</p>
-            <div class="tl-meta"><span>Feb 2022 – Feb 2026</span><span class="tl-meta-sep"></span><span>Plano, TX</span><span class="tl-meta-sep"></span><span style="color:var(--accent);font-weight:500">Construction Tech · Enterprise AI</span></div>
-          </div>
+          <div class="tl-header-info"><p class="tl-company">Procore Technologies</p><div class="tl-meta"><span>Feb 2022 – Feb 2026</span><span class="tl-meta-sep"></span><span>Plano, TX</span><span class="tl-meta-sep"></span><span style="color:var(--accent);font-weight:500">Construction Tech · Enterprise AI</span></div></div>
         </div>
-        <div class="tl-right">
-          <p class="tl-role">Principal Product &amp; Technology Leader — Data &amp; AI</p>
-          <ul class="tl-bullets">
-            <li>Lifted AI response accuracy from approximately 45% to <strong>90%+</strong> via just-in-time grounding and schema-driven action layers.</li>
-            <li>Shipped multimodal RAG platform adopted by <strong>3,000+ enterprise customers</strong> across text, document, and image workloads.</li>
-            <li>Built supervisor orchestration layer with dynamic intent-routing to domain-specific agents at enterprise scale.</li>
-            <li>Defined AI governance: agent registries, versioning, ML exclusions, hybrid-cloud compliance.</li>
-            <li>Led cross-functional teams across multi-quarter roadmaps.</li>
-          </ul>
-        </div>
+        <div class="tl-right"><p class="tl-role">Principal Product &amp; Technology Leader — Data &amp; AI</p><ul class="tl-bullets"><li>Built enterprise construction intelligence platforms across AI, BIM, drawings, reporting, and operational data.</li><li>Led agentic AI platform that improved construction answer accuracy from approximately 45% to <strong>90%+</strong> through grounding, domain agents, evaluations, and observability.</li><li>Shipped multimodal RAG and document intelligence workflows across RFIs, drawings, submittals, schedules, daily logs, and BIM metadata.</li><li>Scaled 360-degree executive reporting across Financials, PMQS, and Resource Management with near-real-time visibility and sub-250ms performance targets.</li><li>Led cross-functional product, engineering, data, and AI teams across multi-quarter enterprise platform roadmaps.</li></ul></div>
       </div>
       <div class="tl-item">
         <div class="tl-header">
           <div class="tl-logo" style="background:#000"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3L3 19h4.5l1.5-3h6l1.5 3H21L12 3z" fill="white" opacity=".9"/><path d="M9.5 13l2.5-5 2.5 5H9.5z" fill="#000"/></svg></div>
-          <div class="tl-header-info">
-            <p class="tl-company">Autodesk, Inc.</p>
-            <div class="tl-meta"><span>Sep 2013 – Feb 2022</span><span class="tl-meta-sep"></span><span>San Francisco, CA</span><span class="tl-meta-sep"></span><span style="color:var(--accent);font-weight:500">Design Software · Data &amp; ML</span></div>
-          </div>
+          <div class="tl-header-info"><p class="tl-company">Autodesk, Inc.</p><div class="tl-meta"><span>Sep 2013 – Feb 2022</span><span class="tl-meta-sep"></span><span>San Francisco, CA</span><span class="tl-meta-sep"></span><span style="color:var(--accent);font-weight:500">Design Software · Data &amp; ML</span></div></div>
         </div>
-        <div class="tl-right">
-          <p class="tl-role">Technical Product Manager — Data &amp; ML</p>
-          <ul class="tl-bullets">
-            <li>Subscription APIs contributing to <strong>approximately $1B ARR</strong> in FY19 — the company's license-to-subscription pivot.</li>
-            <li>AI/ML churn and buying-readiness models driving <strong>approximately 25% YoY revenue growth</strong>.</li>
-            <li>Petabyte data platform: 5+ PB ingested across 10,000+ tables powering global analytics and ML.</li>
-            <li>NLP support bot (IBM Watson) resolving approximately 20K cases/month with $1M+ annual cost savings.</li>
-          </ul>
-        </div>
+        <div class="tl-right"><p class="tl-role">Technical Product Manager — Data &amp; ML</p><ul class="tl-bullets"><li>Built SaaS platform capabilities supporting Autodesk's transition from perpetual licensing to subscription-based revenue.</li><li>Designed subscription APIs and platform contracts for order creation, product/pricing, partner commerce, entitlement lifecycle, and downstream synchronization.</li><li>Connected Autodesk.com and partner channels into SAP order management and Salesforce subscription and entitlement systems.</li><li>Contributed to subscription platform capabilities supporting <strong>approximately $1B ARR</strong> during Autodesk's business model transformation.</li><li>Led data and ML initiatives for churn, buying readiness, customer intelligence, support automation, and petabyte-scale analytics.</li></ul></div>
       </div>
       <div class="tl-item">
         <div class="tl-header">
           <div class="tl-logo" style="background:#1264A3"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="white" stroke-width="2" opacity=".9"/><path d="M15 10a4 4 0 11-3 6.65" stroke="white" stroke-width="1.75" stroke-linecap="round" opacity=".6"/></svg></div>
-          <div class="tl-header-info">
-            <p class="tl-company">Cognizant</p>
-            <div class="tl-meta"><span>Mar 2011 – Sep 2013</span><span class="tl-meta-sep"></span><span>San Francisco, CA</span><span class="tl-meta-sep"></span><span style="color:var(--accent);font-weight:500">Enterprise CRM</span></div>
-          </div>
+          <div class="tl-header-info"><p class="tl-company">Cognizant</p><div class="tl-meta"><span>Mar 2011 – Sep 2013</span><span class="tl-meta-sep"></span><span>San Francisco, CA</span><span class="tl-meta-sep"></span><span style="color:var(--accent);font-weight:500">Enterprise CRM</span></div></div>
         </div>
-        <div class="tl-right">
-          <p class="tl-role">Business Systems Analyst — CRM &amp; Partner Platforms</p>
-          <ul class="tl-bullets">
-            <li>Led CRM and partner platforms for 50,000+ users; managed migrations of 5,000+ partners and 1M+ customers across global regions.</li>
-          </ul>
-        </div>
+        <div class="tl-right"><p class="tl-role">Business Systems Analyst — CRM &amp; Partner Platforms</p><ul class="tl-bullets"><li>Built enterprise CRM and partner platform foundations for global customer and partner operations.</li><li>Led CRM and partner platform initiatives supporting 50,000+ users.</li><li>Managed migrations across 5,000+ partners and 1M+ customers while building early depth in enterprise integrations, data migration, and operational systems.</li></ul></div>
       </div>
     </div>
   </div>
@@ -565,54 +508,10 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <p class="phil-intro">Four principles that guide every product, every architecture decision, every team I lead.</p>
       </div>
       <ul class="phil-points">
-        <li class="phil-point">
-          <div class="phil-point-accent" style="background:linear-gradient(180deg,#0F62FE,#60A5FA)"></div>
-          <div class="phil-point-inner">
-            <div class="phil-icon-wrap" style="background:rgba(15,98,254,.15);border:1px solid rgba(15,98,254,.2)">
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#60A5FA"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <div class="phil-point-text">
-              <p class="phil-point-title">Outcomes over output</p>
-              <p class="phil-point-body">I measure success by accuracy, retention, and revenue — not velocity or features shipped. Every decision traces back to a customer problem and a business metric.</p>
-            </div>
-          </div>
-        </li>
-        <li class="phil-point">
-          <div class="phil-point-accent" style="background:linear-gradient(180deg,#7C3AED,#A78BFA)"></div>
-          <div class="phil-point-inner">
-            <div class="phil-icon-wrap" style="background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.2)">
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M6 8l-4 3 4 3M14 8l4 3-4 3M12 4l-4 12" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="phil-point-text">
-              <p class="phil-point-title">Technical depth enables trust</p>
-              <p class="phil-point-body">The best product leaders earn engineering trust by understanding system constraints. I can audit a query plan, review an API contract, and challenge an architecture decision.</p>
-            </div>
-          </div>
-        </li>
-        <li class="phil-point">
-          <div class="phil-point-accent" style="background:linear-gradient(180deg,#0D9488,#2DD4BF)"></div>
-          <div class="phil-point-inner">
-            <div class="phil-icon-wrap" style="background:rgba(13,148,136,.15);border:1px solid rgba(13,148,136,.2)">
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="6" height="6" rx="1.5" stroke="#2DD4BF" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.5" stroke="#2DD4BF" stroke-width="1.5" opacity=".5"/><rect x="3" y="11" width="6" height="6" rx="1.5" stroke="#2DD4BF" stroke-width="1.5" opacity=".5"/><path d="M11 14h6M14 11v6" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </div>
-            <div class="phil-point-text">
-              <p class="phil-point-title">Clarity as competitive advantage</p>
-              <p class="phil-point-body">Complex systems fail at the handoff. I invest in clear specs, explicit tradeoffs, and shared understanding — so teams build the right thing the first time.</p>
-            </div>
-          </div>
-        </li>
-        <li class="phil-point">
-          <div class="phil-point-accent" style="background:linear-gradient(180deg,#D97706,#FCD34D)"></div>
-          <div class="phil-point-inner">
-            <div class="phil-icon-wrap" style="background:rgba(217,119,6,.15);border:1px solid rgba(217,119,6,.2)">
-              <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3.5" stroke="#FCD34D" stroke-width="1.5"/><circle cx="3" cy="5" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="17" cy="5" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="3" cy="15" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="17" cy="15" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/></svg>
-            </div>
-            <div class="phil-point-text">
-              <p class="phil-point-title">AI is infrastructure, not magic</p>
-              <p class="phil-point-body">Great AI products need evaluation frameworks, feedback loops, and governance from day one. I built the pipelines that turned 45% accuracy into 90%+ — the unglamorous work that makes AI reliable.</p>
-            </div>
-          </div>
-        </li>
+        <li class="phil-point"><div class="phil-point-accent" style="background:linear-gradient(180deg,#0F62FE,#60A5FA)"></div><div class="phil-point-inner"><div class="phil-icon-wrap" style="background:rgba(15,98,254,.15);border:1px solid rgba(15,98,254,.2)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#60A5FA"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="phil-point-text"><p class="phil-point-title">Outcomes over output</p><p class="phil-point-body">I drive products toward measurable customer and business outcomes: adoption, productivity, retention, revenue, accuracy, and time saved. Shipping features matters only when those features change how customers work.</p></div></div></li>
+        <li class="phil-point"><div class="phil-point-accent" style="background:linear-gradient(180deg,#7C3AED,#A78BFA)"></div><div class="phil-point-inner"><div class="phil-icon-wrap" style="background:rgba(124,58,237,.15);border:1px solid rgba(124,58,237,.2)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M6 8l-4 3 4 3M14 8l4 3-4 3M12 4l-4 12" stroke="#A78BFA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="phil-point-text"><p class="phil-point-title">Technical depth enables better decisions</p><p class="phil-point-body">I go deep enough technically to challenge assumptions, partner with engineering, and make better product tradeoffs. I can reason through architecture, data models, APIs, latency, scale, and reliability with technical teams.</p></div></div></li>
+        <li class="phil-point"><div class="phil-point-accent" style="background:linear-gradient(180deg,#0D9488,#2DD4BF)"></div><div class="phil-point-inner"><div class="phil-icon-wrap" style="background:rgba(13,148,136,.15);border:1px solid rgba(13,148,136,.2)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="6" height="6" rx="1.5" stroke="#2DD4BF" stroke-width="1.5"/><rect x="11" y="3" width="6" height="6" rx="1.5" stroke="#2DD4BF" stroke-width="1.5" opacity=".5"/><rect x="3" y="11" width="6" height="6" rx="1.5" stroke="#2DD4BF" stroke-width="1.5" opacity=".5"/><path d="M11 14h6M14 11v6" stroke="#2DD4BF" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="phil-point-text"><p class="phil-point-title">Clear requirements create execution speed</p><p class="phil-point-body">I believe crisp product requirements are a force multiplier. Clear problem statements, user journeys, acceptance criteria, edge cases, metrics, and tradeoffs reduce rework and help teams build the right thing faster.</p></div></div></li>
+        <li class="phil-point"><div class="phil-point-accent" style="background:linear-gradient(180deg,#D97706,#FCD34D)"></div><div class="phil-point-inner"><div class="phil-icon-wrap" style="background:rgba(217,119,6,.15);border:1px solid rgba(217,119,6,.2)"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3.5" stroke="#FCD34D" stroke-width="1.5"/><circle cx="3" cy="5" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="17" cy="5" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="3" cy="15" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/><circle cx="17" cy="15" r="1.5" stroke="#FCD34D" stroke-width="1.2" opacity=".6"/></svg></div><div class="phil-point-text"><p class="phil-point-title">AI should increase user productivity</p><p class="phil-point-body">I embed AI where it improves real user productivity: faster decisions, fewer manual steps, better retrieval, stronger recommendations, and safer execution. AI products need grounding, governance, feedback loops, and measurement so users can trust them in daily workflows.</p></div></div></li>
       </ul>
     </div>
   </div>
@@ -625,10 +524,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <h2 class="contact-title">Let's build something remarkable</h2>
         <p class="contact-sub">Open to senior and principal product and technology leadership roles, consulting engagements, and fractional CTO opportunities. Based in Plano, TX — available globally.</p>
         <div class="contact-links">
-          <div class="contact-link" style="cursor:default">
-            <div class="contact-link-icon">✉️</div>
-            <div><span class="contact-link-label">Email — click to copy</span><span class="contact-link-val" id="emailAddr" style="user-select:all;cursor:text">shabeerccc@gmail.com</span></div>
-          </div>
+          <div class="contact-link" style="cursor:default"><div class="contact-link-icon">✉️</div><div><span class="contact-link-label">Email — click to copy</span><span class="contact-link-val" id="emailAddr" style="user-select:all;cursor:text">shabeerccc@gmail.com</span></div></div>
           <a href="https://linkedin.com/in/mohamedshabeerusman" target="_blank" class="contact-link"><div class="contact-link-icon">💼</div><div><span class="contact-link-label">LinkedIn</span><span class="contact-link-val">mohamedshabeerusman</span></div></a>
           <a href="https://github.com/shabeerccc" target="_blank" class="contact-link"><div class="contact-link-icon">⚡</div><div><span class="contact-link-label">GitHub</span><span class="contact-link-val">github.com/shabeerccc</span></div></a>
           <a href="tel:2245952177" class="contact-link"><div class="contact-link-icon">📞</div><div><span class="contact-link-label">Phone</span><span class="contact-link-val">224-595-2177</span></div></a>
@@ -638,10 +534,7 @@ footer p{font-size:12px;color:var(--ink-muted)}
         <div class="availability"><span class="avail-dot"></span>Currently available for new opportunities</div>
         <h3 class="cta-box-title">Ready to bring AI products from prototype to production?</h3>
         <p class="cta-box-body">Whether you need a fractional CPO, a CTO partner, or someone to lead your AI platform from strategy to shipped — I have done it at enterprise scale and I can do it for you.</p>
-        <div class="cta-email-display">
-          <span class="cta-email-addr" id="ctaEmail">shabeerccc@gmail.com</span>
-          <span class="cta-copy-hint">select &amp; copy</span>
-        </div>
+        <div class="cta-email-display"><span class="cta-email-addr" id="ctaEmail">shabeerccc@gmail.com</span><span class="cta-copy-hint">select &amp; copy</span></div>
         <p style="font-size:12px;color:rgba(255,255,255,.3);margin-top:4px">MBA · Keller Graduate School &nbsp;·&nbsp; BS EEE · Dr. MGR University</p>
       </div>
     </div>
